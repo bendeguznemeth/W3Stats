@@ -9,13 +9,13 @@
 class Stats {
     let vsHuman: Desc
     let vsElf: Desc
-    let vsOrk: Desc
+    let vsOrc: Desc
     let vsUndead: Desc
     
-    init(vsHuman: Desc, vsElf: Desc, vsOrk: Desc, vsUndead: Desc) {
+    init(vsHuman: Desc, vsElf: Desc, vsOrc: Desc, vsUndead: Desc) {
         self.vsHuman = vsHuman
         self.vsElf = vsElf
-        self.vsOrk = vsOrk
+        self.vsOrc = vsOrc
         self.vsUndead = vsUndead
     }
 }

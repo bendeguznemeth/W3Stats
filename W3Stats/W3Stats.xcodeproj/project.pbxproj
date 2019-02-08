@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */; };
-		EDE6DCCF220C5E8E00347D76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* ViewController.swift */; };
+		EDE6DCCF220C5E8E00347D76 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */; };
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
 		EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */; };
 		EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD5220C5E8F00347D76 /* LaunchScreen.storyboard */; };
@@ -16,12 +16,20 @@
 		EDE6DCE1220D603800347D76 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE0220D603800347D76 /* Player.swift */; };
 		EDE6DCE3220D607F00347D76 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE2220D607F00347D76 /* Stats.swift */; };
 		EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE4220D60F500347D76 /* Desc.swift */; };
+		EDE6DCE9220D988900347D76 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCE8220D988900347D76 /* PlayerView.xib */; };
+		EDE6DCEB220D98CD00347D76 /* VersusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCEA220D98CD00347D76 /* VersusView.xib */; };
+		EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */; };
+		EDE6DCEF220D9B2500347D76 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */; };
+		EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */; };
+		EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF2220D9D0800347D76 /* AddButton.swift */; };
+		EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF4220D9E0900347D76 /* VersusView.swift */; };
+		EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF6220D9E4100347D76 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EDE6DCC9220C5E8E00347D76 /* W3Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W3Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDE6DCCE220C5E8E00347D76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EDE6DCD1220C5E8E00347D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE6DCD6220C5E8F00347D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +38,14 @@
 		EDE6DCE0220D603800347D76 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EDE6DCE2220D607F00347D76 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		EDE6DCE4220D60F500347D76 /* Desc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desc.swift; sourceTree = "<group>"; };
+		EDE6DCE8220D988900347D76 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		EDE6DCEA220D98CD00347D76 /* VersusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VersusView.xib; sourceTree = "<group>"; };
+		EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
+		EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		EDE6DCF2220D9D0800347D76 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		EDE6DCF4220D9E0900347D76 /* VersusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusView.swift; sourceTree = "<group>"; };
+		EDE6DCF6220D9E4100347D76 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +78,58 @@
 		EDE6DCCB220C5E8E00347D76 /* W3Stats */ = {
 			isa = PBXGroup;
 			children = (
+				EDE6DCF8220DA06000347D76 /* View */,
+				EDE6DCF9220DA07600347D76 /* Controller */,
+				EDE6DCE7220D89A800347D76 /* Model */,
+				EDE6DCE6220D88B000347D76 /* Supporting Files */,
+			);
+			path = W3Stats;
+			sourceTree = "<group>";
+		};
+		EDE6DCE6220D88B000347D76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */,
 				EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */,
-				EDE6DCCE220C5E8E00347D76 /* ViewController.swift */,
+				EDE6DCD5220C5E8F00347D76 /* LaunchScreen.storyboard */,
+				EDE6DCD8220C5E8F00347D76 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDE6DCE7220D89A800347D76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				EDE6DCE0220D603800347D76 /* Player.swift */,
 				EDE6DCE2220D607F00347D76 /* Stats.swift */,
 				EDE6DCE4220D60F500347D76 /* Desc.swift */,
 				EDE6DCDE220C7D4A00347D76 /* Species.swift */,
-				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
-				EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */,
-				EDE6DCD5220C5E8F00347D76 /* LaunchScreen.storyboard */,
-				EDE6DCD8220C5E8F00347D76 /* Info.plist */,
 			);
-			path = W3Stats;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDE6DCF8220DA06000347D76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
+				EDE6DCE8220D988900347D76 /* PlayerView.xib */,
+				EDE6DCF6220D9E4100347D76 /* PlayerView.swift */,
+				EDE6DCEA220D98CD00347D76 /* VersusView.xib */,
+				EDE6DCF4220D9E0900347D76 /* VersusView.swift */,
+				EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */,
+				EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */,
+				EDE6DCF2220D9D0800347D76 /* AddButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDE6DCF9220DA07600347D76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */,
+				EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +190,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */,
 				EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */,
 				EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */,
 				EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */,
+				EDE6DCEB220D98CD00347D76 /* VersusView.xib in Resources */,
+				EDE6DCE9220D988900347D76 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +208,13 @@
 			files = (
 				EDE6DCE1220D603800347D76 /* Player.swift in Sources */,
 				EDE6DCE3220D607F00347D76 /* Stats.swift in Sources */,
+				EDE6DCEF220D9B2500347D76 /* PlayerCell.swift in Sources */,
+				EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */,
+				EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */,
+				EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */,
 				EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */,
-				EDE6DCCF220C5E8E00347D76 /* ViewController.swift in Sources */,
+				EDE6DCCF220C5E8E00347D76 /* MainViewController.swift in Sources */,
+				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
 			);
@@ -300,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 239F6BX84Y;
-				INFOPLIST_FILE = W3Stats/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/W3Stats/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,7 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 239F6BX84Y;
-				INFOPLIST_FILE = W3Stats/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/W3Stats/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

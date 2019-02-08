@@ -9,6 +9,6 @@
 enum Species {
     case human
     case elf
-    case ork
+    case orc
     case undead
 }
