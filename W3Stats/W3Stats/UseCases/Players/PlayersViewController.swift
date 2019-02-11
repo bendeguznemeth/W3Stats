@@ -10,6 +10,8 @@ import UIKit
 
 class PlayersViewController: UIViewController {
 
+    var players = ["player1", "player2"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

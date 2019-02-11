@@ -8,17 +8,35 @@
 
 import UIKit
 
+struct PlayerCellContent {
+    let playerImageName: String
+    let name: String
+    let percentage: String
+}
+
 class PlayerCell: UITableViewCell {
 
+    @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var playerImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var percentageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.innerView.layer.cornerRadius = 15
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    func displayContent(_ content: PlayerCellContent) {
+        if let image = UIImage(named: content.playerImageName) {
+            self.playerImageView.image = image
+        }
+        
+        self.nameLabel.text = content.name
+        self.percentageLabel.text = content.percentage
+    }
 }
