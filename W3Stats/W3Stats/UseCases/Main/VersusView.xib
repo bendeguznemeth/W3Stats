@@ -34,7 +34,7 @@
                             <rect key="frame" x="10" y="10" width="325" height="200"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-IA-cnz" userLabel="Player Stack View">
-                                    <rect key="frame" x="0.0" y="0.0" width="154" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="136.5" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-lC-ENA" userLabel="vs Label">
                                             <rect key="frame" x="0.0" y="0.0" width="17.5" height="50"/>
@@ -49,8 +49,8 @@
                                                 <constraint firstAttribute="width" constant="50" id="lWW-Pd-XfU"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd8-70-9AA" userLabel="Percentage Label">
-                                            <rect key="frame" x="107.5" y="0.0" width="46.5" height="50"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd8-70-9AA" userLabel="Percentage Label">
+                                            <rect key="frame" x="107.5" y="0.0" width="29" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

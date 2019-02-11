@@ -10,6 +10,12 @@ import UIKit
 
 class StatsViewController: UIViewController {
 
+    @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var vsHumanView: VersusView!
+    @IBOutlet weak var vsElfView: VersusView!
+    @IBOutlet weak var vsOrcView: VersusView!
+    @IBOutlet weak var vsUndeadView: VersusView!
+    
     var player = "player"
     
     override func viewDidLoad() {

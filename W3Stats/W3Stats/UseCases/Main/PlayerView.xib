@@ -34,7 +34,7 @@
                             <rect key="frame" x="10" y="10" width="310" height="200"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E9k-Kl-WCh" userLabel="Player Stack View">
-                                    <rect key="frame" x="0.0" y="0.0" width="227.5" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="kJ2-ao-DUg" userLabel="Player Image View">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -43,14 +43,14 @@
                                                 <constraint firstAttribute="width" secondItem="kJ2-ao-DUg" secondAttribute="height" multiplier="1:1" id="y8G-HC-VzK"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C44-bc-Jfw" userLabel="Name Label">
-                                            <rect key="frame" x="70" y="0.0" width="91" height="50"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C44-bc-Jfw" userLabel="Name Label">
+                                            <rect key="frame" x="70" y="0.0" width="45" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9h-3H-jqf" userLabel="Percentage Label">
-                                            <rect key="frame" x="181" y="0.0" width="46.5" height="50"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9h-3H-jqf" userLabel="Percentage Label">
+                                            <rect key="frame" x="135" y="0.0" width="29" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
