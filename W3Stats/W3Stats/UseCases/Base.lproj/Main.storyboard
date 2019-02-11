@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stats View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StatsViewController" customModule="W3Stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnc-w8-gtB" customClass="PlayerView" customModule="W3Stats" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="PgL-T5-gf4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HnM-y7-vFl" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="260" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="FrC-fk-dBl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HnM-y7-vFl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9ma-Fv-97j"/>
+                            <constraint firstItem="HnM-y7-vFl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Be6-8E-3gD"/>
+                            <constraint firstItem="Bnc-w8-gtB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TfB-7I-L3K"/>
+                            <constraint firstItem="HnM-y7-vFl" firstAttribute="top" secondItem="Bnc-w8-gtB" secondAttribute="bottom" id="Woz-Ff-AWR"/>
+                            <constraint firstItem="Bnc-w8-gtB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qo0-Zq-IhS"/>
+                            <constraint firstItem="Bnc-w8-gtB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sDt-hq-a2x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--Players View Controller-->
+        <scene sceneID="FgQ-sC-wpi">
+            <objects>
+                <viewController id="ElE-yg-xJq" customClass="PlayersViewController" customModule="W3Stats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8P3-59-ie1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="62N-9X-MDr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ik-vG-OTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="27"/>
+        </scene>
+    </scenes>
+</document>

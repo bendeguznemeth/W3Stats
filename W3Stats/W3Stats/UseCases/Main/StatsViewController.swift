@@ -8,8 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class StatsViewController: UIViewController {
 
+    var player = "player"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */; };
-		EDE6DCCF220C5E8E00347D76 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */; };
+		EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */; };
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
 		EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */; };
 		EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD5220C5E8F00347D76 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		EDE6DCC9220C5E8E00347D76 /* W3Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W3Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		EDE6DCD1220C5E8E00347D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE6DCD6220C5E8F00347D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,8 +78,7 @@
 		EDE6DCCB220C5E8E00347D76 /* W3Stats */ = {
 			isa = PBXGroup;
 			children = (
-				EDE6DCF8220DA06000347D76 /* View */,
-				EDE6DCF9220DA07600347D76 /* Controller */,
+				EDE6DCF8220DA06000347D76 /* UseCases */,
 				EDE6DCE7220D89A800347D76 /* Model */,
 				EDE6DCE6220D88B000347D76 /* Supporting Files */,
 			);
@@ -108,28 +107,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		EDE6DCF8220DA06000347D76 /* View */ = {
+		EDE6DCF8220DA06000347D76 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
 				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
+				EDE6DCFA220DA55400347D76 /* Main */,
+				EDE6DCFB220DA56200347D76 /* Players */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		EDE6DCFA220DA55400347D76 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */,
 				EDE6DCE8220D988900347D76 /* PlayerView.xib */,
 				EDE6DCF6220D9E4100347D76 /* PlayerView.swift */,
 				EDE6DCEA220D98CD00347D76 /* VersusView.xib */,
 				EDE6DCF4220D9E0900347D76 /* VersusView.swift */,
-				EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */,
-				EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */,
 				EDE6DCF2220D9D0800347D76 /* AddButton.swift */,
 			);
-			path = View;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		EDE6DCF9220DA07600347D76 /* Controller */ = {
+		EDE6DCFB220DA56200347D76 /* Players */ = {
 			isa = PBXGroup;
 			children = (
-				EDE6DCCE220C5E8E00347D76 /* MainViewController.swift */,
 				EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */,
+				EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */,
+				EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */,
 			);
-			path = Controller;
+			path = Players;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +221,7 @@
 				EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */,
 				EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */,
 				EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */,
-				EDE6DCCF220C5E8E00347D76 /* MainViewController.swift in Sources */,
+				EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */,
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
