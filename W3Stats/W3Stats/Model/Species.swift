@@ -6,7 +6,7 @@
 //  Copyright © 2019. Németh Bendegúz. All rights reserved.
 //
 
-enum Species {
+enum Species: String {
     case human
     case elf
     case orc

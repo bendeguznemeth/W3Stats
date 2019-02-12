@@ -18,7 +18,6 @@
                 <outlet property="percentageLabel" destination="wd8-70-9AA" id="my7-kP-Rzj"/>
                 <outlet property="speciesImageView" destination="x6c-5F-se4" id="fpL-jp-H5S"/>
                 <outlet property="totalLabel" destination="VMT-EK-n4K" id="3rz-Zj-hDK"/>
-                <outlet property="vsLabel" destination="gvo-lC-ENA" id="zfd-A2-1OY"/>
                 <outlet property="winsLabel" destination="zXn-g4-qy8" id="5mA-yo-A3x"/>
             </connections>
         </placeholder>

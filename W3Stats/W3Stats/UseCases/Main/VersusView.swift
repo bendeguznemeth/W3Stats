@@ -8,12 +8,19 @@
 
 import UIKit
 
+struct VersusViewContent {
+    let speciesImageName: String
+    let percentage: String
+    let total: String
+    let wins: String
+    let losses: String
+}
+
 class VersusView: UIView {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var speciesImageView: UIImageView!
-    @IBOutlet weak var vsLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
@@ -38,4 +45,14 @@ class VersusView: UIView {
         self.innerView.layer.cornerRadius = 15
     }
 
+    func displayContent(_ content: VersusViewContent) {
+        if let image = UIImage(named: content.speciesImageName) {
+            self.speciesImageView.image = image
+        }
+        
+        self.percentageLabel.text = content.percentage
+        self.totalLabel.text = content.total
+        self.winsLabel.text = content.wins
+        self.lossesLabel.text = content.losses
+    }
 }

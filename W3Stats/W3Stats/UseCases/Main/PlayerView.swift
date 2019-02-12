@@ -8,6 +8,15 @@
 
 import UIKit
 
+struct PlayerViewContent {
+    let playerImageName: String
+    let name: String
+    let percentage: String
+    let total: String
+    let wins: String
+    let losses: String
+}
+
 class PlayerView: UIView {
 
     @IBOutlet weak var contentView: UIView!
@@ -42,4 +51,15 @@ class PlayerView: UIView {
         print("tapped")
     }
 
+    func displayContent(_ content: PlayerViewContent) {
+        if let image = UIImage(named: content.playerImageName) {
+            self.playerImageView.image = image
+        }
+        
+        self.nameLabel.text = content.name
+        self.percentageLabel.text = content.percentage
+        self.totalLabel.text = content.total
+        self.winsLabel.text = content.wins
+        self.lossesLabel.text = content.losses
+    }
 }
