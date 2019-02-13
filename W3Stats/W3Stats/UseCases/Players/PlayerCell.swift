@@ -11,7 +11,6 @@ import UIKit
 struct PlayerCellContent {
     let playerImageName: String
     let name: String
-    let percentage: String
 }
 
 class PlayerCell: UITableViewCell {
@@ -19,7 +18,6 @@ class PlayerCell: UITableViewCell {
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var percentageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +35,5 @@ class PlayerCell: UITableViewCell {
         }
         
         self.nameLabel.text = content.name
-        self.percentageLabel.text = content.percentage
     }
 }

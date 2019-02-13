@@ -10,23 +10,50 @@ import UIKit
 
 class PlayersViewController: UIViewController {
 
-    var players = ["player1", "player2"]
+    @IBOutlet weak var playersTableView: UITableView!
+    
+    var players = [Player(name: "Balázs Papp", species: .human),
+                   Player(name: "Kristóf Varga", species: .orc),
+                   Player(name: "Balázs Németh", species: .elf),
+                   Player(name: "János Csizmadia", species: .human),
+                   Player(name: "Gábor Demkó", species: .undead)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.playersTableView.dataSource = self
+        self.playersTableView.delegate = self
+        
+        let cellNib = UINib(nibName: "PlayerCell", bundle: nil)
+        self.playersTableView.register(cellNib, forCellReuseIdentifier: "PlayerCell")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addPlayerButtonTapped(_ sender: AddButton) {
+        // TODO
     }
-    */
+}
 
+extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.players.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell") as? PlayerCell else {
+                return UITableViewCell()
+        }
+        
+        let name = self.players[indexPath.row].name
+        let imageName = self.players[indexPath.row].species.rawValue
+        
+        let cellContent = PlayerCellContent.init(playerImageName: imageName, name: name)
+        
+        cell.displayContent(cellContent)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO
+    }
 }

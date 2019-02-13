@@ -27,10 +27,10 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
     
-    var player = Player(name: "Balázs Papp", species: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
-                                                                            vsElf: Desc(wins: 22, losses: 8),
-                                                                            vsOrc: Desc(wins: 33, losses: 14),
-                                                                            vsUndead: Desc(wins: 21, losses: 9)))
+    var player = PlayerWithStats(name: "Balázs Papp", species: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
+                                                                                     vsElf: Desc(wins: 22, losses: 8),
+                                                                                     vsOrc: Desc(wins: 33, losses: 14),
+                                                                                     vsUndead: Desc(wins: 21, losses: 9)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,7 @@ class StatsViewController: UIViewController {
         self.showStats()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    @IBAction func addButtonTapped(_ sender: AddButton) {
+    @IBAction func addMatchButtonTapped(_ sender: AddButton) {
         self.showVisualEffectViewWithAnimation()
         self.showAddMatchResultView()
     }
@@ -104,7 +99,7 @@ class StatsViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        self.visualEffectView.alpha = 0.95
+                        self.visualEffectView.alpha = 1
                         self.view.layoutIfNeeded()
         })
     }

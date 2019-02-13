@@ -9,11 +9,9 @@
 class Player {
     let name: String
     let species: Species
-    let stats: Stats
     
-    init(name: String, species: Species, stats: Stats) {
+    init(name: String, species: Species) {
         self.name = name
         self.species = species
-        self.stats = stats
     }
 }

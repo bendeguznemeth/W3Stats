@@ -20,7 +20,7 @@
                     <rect key="frame" x="15" y="10" width="345" height="70"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-lT-fUs" userLabel="Player Stack View">
-                            <rect key="frame" x="10" y="10" width="164" height="50"/>
+                            <rect key="frame" x="10" y="10" width="115" height="50"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="1Cc-sS-4im" userLabel="Player Image View">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -31,12 +31,6 @@
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieg-n3-Uei" userLabel="Name Label">
                                     <rect key="frame" x="70" y="0.0" width="45" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXc-Kz-zlf" userLabel="Percentage Label">
-                                    <rect key="frame" x="135" y="0.0" width="29" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -65,7 +59,6 @@
             <connections>
                 <outlet property="innerView" destination="Tbk-yq-1su" id="W8y-5r-fhf"/>
                 <outlet property="nameLabel" destination="ieg-n3-Uei" id="Yig-e0-WdM"/>
-                <outlet property="percentageLabel" destination="MXc-Kz-zlf" id="IgZ-E9-gvJ"/>
                 <outlet property="playerImageView" destination="1Cc-sS-4im" id="Oxm-yE-kYZ"/>
             </connections>
             <point key="canvasLocation" x="120.8" y="0.0"/>

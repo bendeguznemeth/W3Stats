@@ -26,6 +26,7 @@
 		EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF6220D9E4100347D76 /* PlayerView.swift */; };
 		EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */; };
 		EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */; };
+		EDF87CC822143319003FC83F /* PlayerWithStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CC722143319003FC83F /* PlayerWithStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EDE6DCF6220D9E4100347D76 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMatchResultView.xib; sourceTree = "<group>"; };
 		EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchResultView.swift; sourceTree = "<group>"; };
+		EDF87CC722143319003FC83F /* PlayerWithStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWithStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE6DCE0220D603800347D76 /* Player.swift */,
+				EDF87CC722143319003FC83F /* PlayerWithStats.swift */,
 				EDE6DCE2220D607F00347D76 /* Stats.swift */,
 				EDE6DCE4220D60F500347D76 /* Desc.swift */,
 				EDE6DCDE220C7D4A00347D76 /* Species.swift */,
@@ -115,13 +118,13 @@
 			isa = PBXGroup;
 			children = (
 				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
-				EDE6DCFA220DA55400347D76 /* Main */,
+				EDE6DCFA220DA55400347D76 /* Stats */,
 				EDE6DCFB220DA56200347D76 /* Players */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		EDE6DCFA220DA55400347D76 /* Main */ = {
+		EDE6DCFA220DA55400347D76 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
 				EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */,
@@ -133,7 +136,7 @@
 				EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */,
 				EDE6DCF2220D9D0800347D76 /* AddButton.swift */,
 			);
-			path = Main;
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		EDE6DCFB220DA56200347D76 /* Players */ = {
@@ -230,6 +233,7 @@
 				EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */,
 				EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */,
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
+				EDF87CC822143319003FC83F /* PlayerWithStats.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
 				EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */,
