@@ -13,7 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Pmv-SQ-GSr"/>
+                <outlet property="loseLabel" destination="Lu2-p9-leh" id="ej0-gW-RZx"/>
                 <outlet property="speciesPickerView" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
+                <outlet property="winLabel" destination="9cy-Rd-dtc" id="79s-bo-n7j"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

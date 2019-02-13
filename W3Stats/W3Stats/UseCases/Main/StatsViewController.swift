@@ -22,6 +22,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var vsElfView: VersusView!
     @IBOutlet weak var vsOrcView: VersusView!
     @IBOutlet weak var vsUndeadView: VersusView!
+    @IBOutlet weak var addMatchResultView: AddMatchResultView!
     
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
@@ -33,6 +34,7 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addMatchResultView.delegate = self
         self.showStats()
     }
     
@@ -142,5 +144,41 @@ class StatsViewController: UIViewController {
         },
                        completion: nil
         )
+    }
+}
+
+extension StatsViewController: MatchResultDelegate {
+    func addNewMatchResult(_ matchResult: MatchResult) {
+        switch matchResult.vsSpecies {
+        case .human:
+            if matchResult.win {
+                self.player.stats.vsHuman.wins += 1
+            } else {
+                self.player.stats.vsHuman.losses += 1
+            }
+        case .elf:
+            if matchResult.win {
+                self.player.stats.vsElf.wins += 1
+            } else {
+                self.player.stats.vsElf.losses += 1
+            }
+        case .orc:
+            if matchResult.win {
+                self.player.stats.vsOrc.wins += 1
+            } else {
+                self.player.stats.vsOrc.losses += 1
+            }
+        case .undead:
+            if matchResult.win {
+                self.player.stats.vsUndead.wins += 1
+            } else {
+                self.player.stats.vsUndead.losses += 1
+            }
+        }
+        
+        self.showStats()
+        
+        self.hideAddMatchResultView()
+        self.hideVisualEffectViewWithAnimation()
     }
 }

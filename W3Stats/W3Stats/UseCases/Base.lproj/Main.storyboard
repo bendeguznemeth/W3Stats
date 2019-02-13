@@ -125,6 +125,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1220"/>
                     <connections>
+                        <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
                         <outlet property="addMatchResultViewBottomContraint" destination="ePQ-6k-SzO" id="fev-XG-7ZM"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
                         <outlet property="visualEffectView" destination="XVs-lt-pqz" id="hL9-am-8wt"/>

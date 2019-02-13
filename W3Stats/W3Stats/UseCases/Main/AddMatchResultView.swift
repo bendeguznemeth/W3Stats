@@ -8,12 +8,27 @@
 
 import UIKit
 
+protocol MatchResultDelegate {
+    func addNewMatchResult(_ matchResult: MatchResult)
+}
+
+struct MatchResult {
+    var vsSpecies: Species
+    var win: Bool
+}
+
 class AddMatchResultView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var speciesPickerView: UIPickerView!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var loseLabel: UILabel!
     
     private let pickerContent: [Species] = [.elf, .human, .orc, .undead]
+    
+    private var matchResult = MatchResult(vsSpecies: .human, win: true)
+    
+    var delegate: MatchResultDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,15 +53,21 @@ class AddMatchResultView: UIView {
     }
     
     @IBAction func tapOnWin(_ sender: UITapGestureRecognizer) {
-        print("tapOnWin")
+        self.loseLabel.alpha = 0.2
+        self.winLabel.alpha = 1
+        
+        self.matchResult.win = true
     }
     
     @IBAction func tapOnLose(_ sender: UITapGestureRecognizer) {
-        print("tapOnLose")
+        self.winLabel.alpha = 0.2
+        self.loseLabel.alpha = 1
+        
+        self.matchResult.win = false
     }
     
     @IBAction func tapOnSave(_ sender: UIButton) {
-        print("tapOnSave")
+        self.delegate?.addNewMatchResult(self.matchResult)
     }
 }
 
@@ -65,6 +86,6 @@ extension AddMatchResultView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("\(row)")
+        self.matchResult.vsSpecies = self.pickerContent[row]
     }
 }
