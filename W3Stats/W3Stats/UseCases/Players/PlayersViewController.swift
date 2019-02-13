@@ -8,8 +8,12 @@
 
 import UIKit
 
-class PlayersViewController: UIViewController {
+protocol PlayersViewControllerDelegate {
+    func updateUI()
+}
 
+class PlayersViewController: UIViewController {
+    
     @IBOutlet weak var playersTableView: UITableView!
     
     var players = [Player(name: "Balázs Papp", species: .human),
@@ -17,6 +21,8 @@ class PlayersViewController: UIViewController {
                    Player(name: "Balázs Németh", species: .elf),
                    Player(name: "János Csizmadia", species: .human),
                    Player(name: "Gábor Demkó", species: .undead)]
+    
+    var delegate: PlayersViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +46,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell") as? PlayerCell else {
-                return UITableViewCell()
+            return UITableViewCell()
         }
         
         let name = self.players[indexPath.row].name
@@ -54,6 +60,17 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO
+        DispatchQueue.main.async {
+            guard let statsViewController = self.presentingViewController as? StatsViewController else {
+                return
+            }
+            
+            statsViewController.player.name = self.players[indexPath.row].name
+            statsViewController.player.species = self.players[indexPath.row].species
+            
+            self.delegate?.updateUI()
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

@@ -7,8 +7,9 @@
 //
 
 class Player {
-    let name: String
-    let species: Species
+    // TODO : Change back to let instead of var
+    var name: String
+    var species: Species
     
     init(name: String, species: Species) {
         self.name = name

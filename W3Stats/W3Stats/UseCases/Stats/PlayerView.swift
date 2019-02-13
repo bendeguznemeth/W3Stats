@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PlayerViewDelegate {
+    func presentPlayersViewController()
+}
+
 struct PlayerViewContent {
     let playerImageName: String
     let name: String
@@ -27,6 +31,8 @@ class PlayerView: UIView {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
+    
+    var delegate: PlayerViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,8 +54,7 @@ class PlayerView: UIView {
     }
     
     @IBAction func changePlayerTapped(_ sender: UIButton) {
-        // TODO
-        print("tapped")
+        self.delegate?.presentPlayersViewController()
     }
 
     func displayContent(_ content: PlayerViewContent) {

@@ -34,7 +34,10 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.addMatchResultView.delegate = self
+        self.playerView.delegate = self
+        
         self.showStats()
     }
     
@@ -175,5 +178,26 @@ extension StatsViewController: MatchResultDelegate {
         
         self.hideAddMatchResultView()
         self.hideVisualEffectViewWithAnimation()
+    }
+}
+
+extension StatsViewController: PlayerViewDelegate {
+    func presentPlayersViewController() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let playersViewController = storyboard.instantiateViewController(withIdentifier: "PlayersViewController") as? PlayersViewController else {
+                return
+            }
+            
+            playersViewController.delegate = self
+            
+            self.present(playersViewController, animated: true, completion: nil)
+        }
+    }
+}
+
+extension StatsViewController: PlayersViewControllerDelegate {
+    func updateUI() {
+        self.showStats()
     }
 }
