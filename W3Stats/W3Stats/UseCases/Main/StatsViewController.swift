@@ -9,7 +9,7 @@
 import UIKit
 
 class StatsViewController: UIViewController {
-
+    
     struct Stat {
         let wins: Int
         let losses: Int
@@ -23,22 +23,34 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var vsOrcView: VersusView!
     @IBOutlet weak var vsUndeadView: VersusView!
     
-    let player = Player(name: "Balázs Papp", species: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
+    
+    var player = Player(name: "Balázs Papp", species: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
                                                                             vsElf: Desc(wins: 22, losses: 8),
                                                                             vsOrc: Desc(wins: 33, losses: 14),
                                                                             vsUndead: Desc(wins: 21, losses: 9)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.showStats()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    
+    @IBAction func addButtonTapped(_ sender: AddButton) {
+        self.showVisualEffectViewWithAnimation()
+        self.showAddMatchResultView()
+    }
+    
+    @IBAction func tappedOnVisualEffectView(_ sender: UITapGestureRecognizer) {
+        self.hideAddMatchResultView()
+        self.hideVisualEffectViewWithAnimation()
+    }
+    
     private func showStats() {
         let vsHumanStat = self.calculateStat(wins: self.player.stats.vsHuman.wins, losses: self.player.stats.vsHuman.losses)
         let vsHumanViewContent = self.getVersusViewContent(from: vsHumanStat, for: .human)
@@ -61,11 +73,11 @@ class StatsViewController: UIViewController {
         
         let playerStat = self.calculateStat(wins: wins, losses: losses)
         let playerViewContent = PlayerViewContent.init(playerImageName: self.player.species.rawValue,
-                                                        name: self.player.name,
-                                                        percentage: "\(playerStat.percentage) %",
-                                                        total: "\(playerStat.total)",
-                                                        wins: "\(playerStat.wins)",
-                                                        losses: "\(playerStat.losses)")
+                                                       name: self.player.name,
+                                                       percentage: "\(playerStat.percentage) %",
+            total: "\(playerStat.total)",
+            wins: "\(playerStat.wins)",
+            losses: "\(playerStat.losses)")
         self.playerView.displayContent(playerViewContent)
     }
     
@@ -77,10 +89,58 @@ class StatsViewController: UIViewController {
     
     private func getVersusViewContent(from stat: Stat, for species: Species) -> VersusViewContent {
         return VersusViewContent.init(speciesImageName: species.rawValue,
-                                        percentage: "\(stat.percentage) %",
-                                        total: "\(stat.total)",
-                                        wins: "\(stat.wins)",
-                                        losses: "\(stat.losses)")
+                                      percentage: "\(stat.percentage) %",
+            total: "\(stat.total)",
+            wins: "\(stat.wins)",
+            losses: "\(stat.losses)")
+    }
+    
+    private func showVisualEffectViewWithAnimation() {
+        self.visualEffectView.alpha = 0
+        self.visualEffectView.isHidden = false
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 0.95
+                        self.view.layoutIfNeeded()
+        })
+    }
+    
+    private func hideVisualEffectViewWithAnimation() {
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 0
+                        self.view.layoutIfNeeded()
+        },
+                       completion: { _ in
+                        self.visualEffectView.isHidden = true
+        })
+    }
+    
+    private func showAddMatchResultView() {
+        animate(with: -40)
+    }
+    
+    private func hideAddMatchResultView() {
+        animate(with: -280)
+    }
+    
+    private func animate(with constant: CGFloat) {
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.6,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.1,
+                       options: [.curveLinear],
+                       animations: {
+                        self.addMatchResultViewBottomContraint.constant = constant
+                        self.view.layoutIfNeeded()
+        },
+                       completion: nil
+        )
     }
 }
-

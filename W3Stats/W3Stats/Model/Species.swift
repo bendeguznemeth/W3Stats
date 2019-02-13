@@ -7,8 +7,24 @@
 //
 
 enum Species: String {
+    
+    static let count = 4
+    
     case human
     case elf
     case orc
     case undead
+    
+    func displayableValue() -> String {
+        switch self {
+        case .human:
+            return "Human"
+        case .elf:
+            return "Elf"
+        case .orc:
+            return "Orc"
+        case .undead:
+            return "Undead"
+        }
+    }
 }

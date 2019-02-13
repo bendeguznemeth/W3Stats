@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Pmv-SQ-GSr"/>
+                <outlet property="speciesPickerView" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-QS-o7A" userLabel="Species Picker View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="W1V-Gx-Crn"/>
+                    </constraints>
+                </pickerView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PEy-VQ-JHF" userLabel="WIN-LOSE Stack View">
+                    <rect key="frame" x="87.5" y="130" width="200" height="50"/>
+                    <subviews>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cy-Rd-dtc" userLabel="Win Label">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="aMS-bo-0io"/>
+                                <constraint firstAttribute="height" constant="50" id="znd-s2-bbC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="oNP-0d-bpV" appends="YES" id="hdp-jA-NnY"/>
+                            </connections>
+                        </label>
+                        <label opaque="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu2-p9-leh" userLabel="Lose Label">
+                            <rect key="frame" x="100" y="0.0" width="100" height="50"/>
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="u0H-sa-bv4"/>
+                                <constraint firstAttribute="height" constant="50" id="zDc-Do-8fe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="7Vv-Ob-Z1x" appends="YES" id="Ch2-08-ZxM"/>
+                            </connections>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-QX-gXe">
+                    <rect key="frame" x="147.5" y="190" width="80" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="LLa-xI-Jma"/>
+                        <constraint firstAttribute="height" constant="40" id="jDz-So-705"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="tapOnSave:" destination="-1" eventType="touchUpInside" id="mUV-qv-WTx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DPr-QS-o7A" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="J3a-HC-lcp"/>
+                <constraint firstItem="PEy-VQ-JHF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q4K-ck-vAB"/>
+                <constraint firstItem="PEy-VQ-JHF" firstAttribute="top" secondItem="DPr-QS-o7A" secondAttribute="bottom" constant="10" id="cVf-KS-wdy"/>
+                <constraint firstItem="hUG-QX-gXe" firstAttribute="top" secondItem="PEy-VQ-JHF" secondAttribute="bottom" constant="10" id="mLW-ea-bjJ"/>
+                <constraint firstItem="DPr-QS-o7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qZM-8W-y7A"/>
+                <constraint firstItem="DPr-QS-o7A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uz9-bp-zh7"/>
+                <constraint firstItem="hUG-QX-gXe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vTa-j3-GwT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="-125.93703148425789"/>
+        </view>
+        <tapGestureRecognizer id="oNP-0d-bpV" userLabel="Win Tap Gesture Recognizer">
+            <connections>
+                <action selector="tapOnWin:" destination="-1" id="FJu-8V-y9J"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="7Vv-Ob-Z1x" userLabel="Lose Tap Gesture Recognizer">
+            <connections>
+                <action selector="tapOnLose:" destination="-1" id="RjF-OO-DL9"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

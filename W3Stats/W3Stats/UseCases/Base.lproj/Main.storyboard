@@ -77,16 +77,46 @@
                                 </constraints>
                                 <state key="normal" image="add_white"/>
                                 <state key="highlighted" image="add_grey"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDo-aJ-JdD"/>
+                                </connections>
                             </button>
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-lt-pqz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1156"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RTd-Lw-TuA" userLabel="View Of Visual Effect View">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1156"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="PRK-gU-7f7" appends="YES" id="AYx-fS-qK6"/>
+                                    </connections>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-gX-3DF" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1220" width="375" height="280"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="oZj-CT-cLQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LcA-Yv-COn" secondAttribute="bottom" constant="20" id="1A6-7U-Jz2"/>
+                            <constraint firstItem="XVs-lt-pqz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3dy-09-KOM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="njv-oo-gMv" secondAttribute="trailing" id="50W-EL-f04"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyO-gX-3DF" secondAttribute="trailing" id="9GA-yu-BAn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="njv-oo-gMv" secondAttribute="bottom" id="Dhu-J6-BMy"/>
                             <constraint firstItem="8Cg-Ge-7uL" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Isz-Tk-xDG"/>
+                            <constraint firstItem="dyO-gX-3DF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SQO-U0-S4m"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VnM-0z-Aqr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVs-lt-pqz" secondAttribute="bottom" id="Z1i-vG-8JB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dyO-gX-3DF" secondAttribute="bottom" constant="-280" id="ePQ-6k-SzO"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRK-V4-7VE"/>
+                            <constraint firstItem="XVs-lt-pqz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l7I-8c-GMB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVs-lt-pqz" secondAttribute="trailing" id="ovv-aB-BGW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LcA-Yv-COn" secondAttribute="trailing" constant="20" id="xsE-6K-Y9R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -95,7 +125,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1220"/>
                     <connections>
+                        <outlet property="addMatchResultViewBottomContraint" destination="ePQ-6k-SzO" id="fev-XG-7ZM"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
+                        <outlet property="visualEffectView" destination="XVs-lt-pqz" id="hL9-am-8wt"/>
                         <outlet property="vsElfView" destination="IaS-RB-ydZ" id="Nub-B5-5q2"/>
                         <outlet property="vsHumanView" destination="uNa-cp-a1D" id="EXN-jm-qxq"/>
                         <outlet property="vsOrcView" destination="QAV-Pa-5lK" id="tBV-AR-e2g"/>
@@ -103,13 +135,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PRK-gU-7f7">
+                    <connections>
+                        <action selector="tappedOnVisualEffectView:" destination="BYZ-38-t0r" id="1TQ-wA-JPz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="968.79999999999995" y="26.086956521739133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m8N-ZQ-YXr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="szr-iG-WuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="9gj-p3-Uap" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8eB-SB-6ml">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -119,6 +155,7 @@
                         <segue destination="ElE-yg-xJq" kind="relationship" relationship="rootViewController" id="qFe-qx-CcM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szr-iG-WuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743" y="27"/>
         </scene>

@@ -24,6 +24,8 @@
 		EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF2220D9D0800347D76 /* AddButton.swift */; };
 		EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF4220D9E0900347D76 /* VersusView.swift */; };
 		EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF6220D9E4100347D76 /* PlayerView.swift */; };
+		EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */; };
+		EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EDE6DCF2220D9D0800347D76 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		EDE6DCF4220D9E0900347D76 /* VersusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusView.swift; sourceTree = "<group>"; };
 		EDE6DCF6220D9E4100347D76 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMatchResultView.xib; sourceTree = "<group>"; };
+		EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				EDE6DCF6220D9E4100347D76 /* PlayerView.swift */,
 				EDE6DCEA220D98CD00347D76 /* VersusView.xib */,
 				EDE6DCF4220D9E0900347D76 /* VersusView.swift */,
+				EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */,
+				EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */,
 				EDE6DCF2220D9D0800347D76 /* AddButton.swift */,
 			);
 			path = Main;
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */,
 				EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */,
 				EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */,
 				EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */,
@@ -225,6 +232,7 @@
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
+				EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
