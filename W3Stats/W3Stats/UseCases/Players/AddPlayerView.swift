@@ -64,6 +64,7 @@ class AddPlayerView: UIView {
     
     @IBAction func tapOnSave(_ sender: UIButton) {
         self.nameTextField.resignFirstResponder()
+        
         self.delegate?.addNewPlayer(self.playerResult)
         self.nameTextField.text = nil
     }
