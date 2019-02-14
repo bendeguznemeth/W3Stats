@@ -8,6 +8,8 @@
 
 enum Species: String {
     
+    static let allSpecies: [Species] = [.elf, .human, .orc, .undead]
+    
     static let count = 4
     
     case human

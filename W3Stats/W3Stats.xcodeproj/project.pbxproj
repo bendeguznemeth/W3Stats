@@ -27,6 +27,8 @@
 		EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */; };
 		EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */; };
 		EDF87CC822143319003FC83F /* PlayerWithStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CC722143319003FC83F /* PlayerWithStats.swift */; };
+		EDF87CCA22145099003FC83F /* AddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF87CC922145099003FC83F /* AddPlayerView.xib */; };
+		EDF87CCC221450AC003FC83F /* AddPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF87CCB221450AC003FC83F /* AddPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMatchResultView.xib; sourceTree = "<group>"; };
 		EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchResultView.swift; sourceTree = "<group>"; };
 		EDF87CC722143319003FC83F /* PlayerWithStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWithStats.swift; sourceTree = "<group>"; };
+		EDF87CC922145099003FC83F /* AddPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlayerView.xib; sourceTree = "<group>"; };
+		EDF87CCB221450AC003FC83F /* AddPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */,
 				EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */,
 				EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */,
+				EDF87CC922145099003FC83F /* AddPlayerView.xib */,
+				EDF87CCB221450AC003FC83F /* AddPlayerView.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */,
 				EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */,
 				EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */,
+				EDF87CCA22145099003FC83F /* AddPlayerView.xib in Resources */,
 				EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */,
 				EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */,
 				EDE6DCEB220D98CD00347D76 /* VersusView.xib in Resources */,
@@ -225,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE6DCE1220D603800347D76 /* Player.swift in Sources */,
+				EDF87CCC221450AC003FC83F /* AddPlayerView.swift in Sources */,
 				EDE6DCE3220D607F00347D76 /* Stats.swift in Sources */,
 				EDE6DCEF220D9B2500347D76 /* PlayerCell.swift in Sources */,
 				EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */,
