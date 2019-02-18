@@ -13,7 +13,7 @@
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
 		EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */; };
 		EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD5220C5E8F00347D76 /* LaunchScreen.storyboard */; };
-		EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCDE220C7D4A00347D76 /* Species.swift */; };
+		EDE6DCDF220C7D4A00347D76 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCDE220C7D4A00347D76 /* Race.swift */; };
 		EDE6DCE1220D603800347D76 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE0220D603800347D76 /* Player.swift */; };
 		EDE6DCE3220D607F00347D76 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE2220D607F00347D76 /* Stats.swift */; };
 		EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCE4220D60F500347D76 /* Desc.swift */; };
@@ -42,7 +42,7 @@
 		EDE6DCD3220C5E8F00347D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE6DCD6220C5E8F00347D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDE6DCD8220C5E8F00347D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDE6DCDE220C7D4A00347D76 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		EDE6DCDE220C7D4A00347D76 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		EDE6DCE0220D603800347D76 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EDE6DCE2220D607F00347D76 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		EDE6DCE4220D60F500347D76 /* Desc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desc.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				EDF87CC722143319003FC83F /* PlayerWithStats.swift */,
 				EDE6DCE2220D607F00347D76 /* Stats.swift */,
 				EDE6DCE4220D60F500347D76 /* Desc.swift */,
-				EDE6DCDE220C7D4A00347D76 /* Species.swift */,
+				EDE6DCDE220C7D4A00347D76 /* Race.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */,
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDF87CC822143319003FC83F /* PlayerWithStats.swift in Sources */,
-				EDE6DCDF220C7D4A00347D76 /* Species.swift in Sources */,
+				EDE6DCDF220C7D4A00347D76 /* Race.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
 				EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */,
 			);

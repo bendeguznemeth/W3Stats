@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Pmv-SQ-GSr"/>
                 <outlet property="loseLabel" destination="Lu2-p9-leh" id="ej0-gW-RZx"/>
-                <outlet property="speciesPickerView" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
+                <outlet property="racePickerView" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
                 <outlet property="winLabel" destination="9cy-Rd-dtc" id="79s-bo-n7j"/>
             </connections>
         </placeholder>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-QS-o7A" userLabel="Species Picker View">
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-QS-o7A" userLabel="Race Picker View">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="W1V-Gx-Crn"/>

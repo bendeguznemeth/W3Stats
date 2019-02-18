@@ -27,7 +27,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
     
-    var player = PlayerWithStats(name: "Balázs Papp", species: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
+    var player = PlayerWithStats(name: "Balázs Papp", race: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
                                                                                      vsElf: Desc(wins: 22, losses: 8),
                                                                                      vsOrc: Desc(wins: 33, losses: 14),
                                                                                      vsUndead: Desc(wins: 21, losses: 9)))
@@ -72,7 +72,7 @@ class StatsViewController: UIViewController {
         let losses = vsHumanStat.losses + vsElfStat.losses + vsOrcStat.losses + vsUndeadStat.losses
         
         let playerStat = self.calculateStat(wins: wins, losses: losses)
-        let playerViewContent = PlayerViewContent.init(playerImageName: self.player.species.rawValue,
+        let playerViewContent = PlayerViewContent.init(playerImageName: self.player.race.rawValue,
                                                        name: self.player.name,
                                                        percentage: "\(playerStat.percentage) %",
             total: "\(playerStat.total)",
@@ -87,8 +87,8 @@ class StatsViewController: UIViewController {
         return Stat(wins: wins, losses: losses, total: total, percentage: Int(percentage))
     }
     
-    private func getVersusViewContent(from stat: Stat, for species: Species) -> VersusViewContent {
-        return VersusViewContent.init(speciesImageName: species.rawValue,
+    private func getVersusViewContent(from stat: Stat, for race: Race) -> VersusViewContent {
+        return VersusViewContent.init(raceImageName: race.rawValue,
                                       percentage: "\(stat.percentage) %",
             total: "\(stat.total)",
             wins: "\(stat.wins)",
@@ -147,7 +147,7 @@ class StatsViewController: UIViewController {
 
 extension StatsViewController: MatchResultDelegate {
     func addNewMatchResult(_ matchResult: MatchResult) {
-        switch matchResult.vsSpecies {
+        switch matchResult.vsRace {
         case .human:
             if matchResult.win {
                 self.player.stats.vsHuman.wins += 1

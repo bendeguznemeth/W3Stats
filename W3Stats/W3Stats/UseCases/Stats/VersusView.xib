@@ -16,7 +16,7 @@
                 <outlet property="innerView" destination="efU-pY-Ffm" id="5sz-gq-9W5"/>
                 <outlet property="lossesLabel" destination="11T-Ng-zTj" id="W8Z-Lx-XXX"/>
                 <outlet property="percentageLabel" destination="wd8-70-9AA" id="my7-kP-Rzj"/>
-                <outlet property="speciesImageView" destination="x6c-5F-se4" id="fpL-jp-H5S"/>
+                <outlet property="raceImageView" destination="x6c-5F-se4" id="fpL-jp-H5S"/>
                 <outlet property="totalLabel" destination="VMT-EK-n4K" id="3rz-Zj-hDK"/>
                 <outlet property="winsLabel" destination="zXn-g4-qy8" id="5mA-yo-A3x"/>
             </connections>
@@ -41,7 +41,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="x6c-5F-se4" userLabel="Species Image View">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="x6c-5F-se4" userLabel="Race Image View">
                                             <rect key="frame" x="37.5" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="x6c-5F-se4" secondAttribute="height" multiplier="1:1" id="WD1-Ct-QaX"/>

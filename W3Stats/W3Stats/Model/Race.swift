@@ -1,14 +1,14 @@
 //
-//  Species.swift
+//  Race.swift
 //  W3Stats
 //
 //  Created by Németh Bendegúz on 2019. 02. 07..
 //  Copyright © 2019. Németh Bendegúz. All rights reserved.
 //
 
-enum Species: String {
+enum Race: String {
     
-    static let allSpecies: [Species] = [.elf, .human, .orc, .undead]
+    static let allRaces: [Race] = [.elf, .human, .orc, .undead]
     
     static let count = 4
     

@@ -14,17 +14,17 @@ protocol AddPlayerDelegate {
 
 struct PlayerResult {
     var name: String?
-    var species: Species
+    var race: Race
 }
 
 class AddPlayerView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var speciesPickerView: UIPickerView!
+    @IBOutlet weak var racePickerView: UIPickerView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    private var playerResult = PlayerResult(name: nil, species: .human)
+    private var playerResult = PlayerResult(name: nil, race: .human)
     
     var delegate: AddPlayerDelegate?
     
@@ -44,12 +44,12 @@ class AddPlayerView: UIView {
         self.contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.speciesPickerView.dataSource = self
-        self.speciesPickerView.delegate = self
+        self.racePickerView.dataSource = self
+        self.racePickerView.delegate = self
         
         self.nameTextField.delegate = self
         
-        self.speciesPickerView.selectRow(1, inComponent: 0, animated: false)
+        self.racePickerView.selectRow(1, inComponent: 0, animated: false)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
@@ -81,15 +81,15 @@ extension AddPlayerView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Species.count
+        return Race.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Species.allSpecies[row].displayableValue()
+        return Race.allRaces[row].displayableValue()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.playerResult.species = Species.allSpecies[row]
+        self.playerResult.race = Race.allRaces[row]
     }
 }
 

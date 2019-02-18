@@ -9,8 +9,8 @@
 class PlayerWithStats: Player {
     let stats: Stats
     
-    init(name: String, species: Species, stats: Stats) {
+    init(name: String, race: Race, stats: Stats) {
         self.stats = stats
-        super.init(name: name, species: species)
+        super.init(name: name, race: race)
     }
 }

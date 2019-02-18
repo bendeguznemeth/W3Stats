@@ -19,11 +19,11 @@ class PlayersViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addPlayerViewBottomConstraint: NSLayoutConstraint!
     
-    var players = [Player(name: "Balázs Papp", species: .human),
-                   Player(name: "Kristóf Varga", species: .orc),
-                   Player(name: "Balázs Németh", species: .elf),
-                   Player(name: "János Csizmadia", species: .human),
-                   Player(name: "Gábor Demkó", species: .undead)]
+    var players = [Player(name: "Balázs Papp", race: .human),
+                   Player(name: "Kristóf Varga", race: .orc),
+                   Player(name: "Balázs Németh", race: .elf),
+                   Player(name: "János Csizmadia", race: .human),
+                   Player(name: "Gábor Demkó", race: .undead)]
     
     var delegate: PlayersViewControllerDelegate?
     
@@ -117,7 +117,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let name = self.players[indexPath.row].name
-        let imageName = self.players[indexPath.row].species.rawValue
+        let imageName = self.players[indexPath.row].race.rawValue
         
         let cellContent = PlayerCellContent.init(playerImageName: imageName, name: name)
         
@@ -133,7 +133,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             statsViewController.player.name = self.players[indexPath.row].name
-            statsViewController.player.species = self.players[indexPath.row].species
+            statsViewController.player.race = self.players[indexPath.row].race
             
             self.delegate?.updateUI()
             
@@ -155,7 +155,7 @@ extension PlayersViewController: AddPlayerDelegate {
             return
         }
         
-        self.players.append(Player(name: name, species: playerResult.species))
+        self.players.append(Player(name: name, race: playerResult.race))
         self.playersTableView.reloadData()
         
         self.hideAddPlayerView()

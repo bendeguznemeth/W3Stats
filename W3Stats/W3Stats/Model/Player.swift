@@ -7,12 +7,12 @@
 //
 
 class Player {
-    // TODO : Change back to let instead of var
+    // TODO: let
     var name: String
-    var species: Species
+    var race: Race
     
-    init(name: String, species: Species) {
+    init(name: String, race: Race) {
         self.name = name
-        self.species = species
+        self.race = race
     }
 }

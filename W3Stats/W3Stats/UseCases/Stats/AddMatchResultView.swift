@@ -13,18 +13,18 @@ protocol MatchResultDelegate {
 }
 
 struct MatchResult {
-    var vsSpecies: Species
+    var vsRace: Race
     var win: Bool
 }
 
 class AddMatchResultView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var speciesPickerView: UIPickerView!
+    @IBOutlet weak var racePickerView: UIPickerView!
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var loseLabel: UILabel!
     
-    private var matchResult = MatchResult(vsSpecies: .human, win: true)
+    private var matchResult = MatchResult(vsRace: .human, win: true)
     
     var delegate: MatchResultDelegate?
     
@@ -44,10 +44,10 @@ class AddMatchResultView: UIView {
         self.contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.speciesPickerView.dataSource = self
-        self.speciesPickerView.delegate = self
+        self.racePickerView.dataSource = self
+        self.racePickerView.delegate = self
         
-        self.speciesPickerView.selectRow(1, inComponent: 0, animated: false)
+        self.racePickerView.selectRow(1, inComponent: 0, animated: false)
     }
     
     @IBAction func tapOnWin(_ sender: UITapGestureRecognizer) {
@@ -76,14 +76,14 @@ extension AddMatchResultView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Species.count
+        return Race.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Species.allSpecies[row].displayableValue()
+        return Race.allRaces[row].displayableValue()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.matchResult.vsSpecies = Species.allSpecies[row]
+        self.matchResult.vsRace = Race.allRaces[row]
     }
 }

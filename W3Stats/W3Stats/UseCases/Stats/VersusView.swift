@@ -9,7 +9,7 @@
 import UIKit
 
 struct VersusViewContent {
-    let speciesImageName: String
+    let raceImageName: String
     let percentage: String
     let total: String
     let wins: String
@@ -20,7 +20,7 @@ class VersusView: UIView {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var speciesImageView: UIImageView!
+    @IBOutlet weak var raceImageView: UIImageView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
@@ -46,8 +46,8 @@ class VersusView: UIView {
     }
 
     func displayContent(_ content: VersusViewContent) {
-        if let image = UIImage(named: content.speciesImageName) {
-            self.speciesImageView.image = image
+        if let image = UIImage(named: content.raceImageName) {
+            self.raceImageView.image = image
         }
         
         self.percentageLabel.text = content.percentage
