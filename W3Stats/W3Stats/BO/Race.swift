@@ -17,6 +17,19 @@ enum Race: String {
     case orc
     case undead
     
+    init(rawValue: String) {
+        switch rawValue {
+        case "elf":
+            self = .elf
+        case "orc":
+            self = .orc
+        case "undead":
+            self = .undead
+        default:
+            self = .human
+        }
+    }
+    
     func displayableValue() -> String {
         switch self {
         case .human:

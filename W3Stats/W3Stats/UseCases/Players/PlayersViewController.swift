@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol PlayersViewControllerDelegate {
     func updateUI()
@@ -19,11 +20,7 @@ class PlayersViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addPlayerViewBottomConstraint: NSLayoutConstraint!
     
-    var players = [Player(name: "Balázs Papp", race: .human),
-                   Player(name: "Kristóf Varga", race: .orc),
-                   Player(name: "Balázs Németh", race: .elf),
-                   Player(name: "János Csizmadia", race: .human),
-                   Player(name: "Gábor Demkó", race: .undead)]
+    var players = [Player]()
     
     var delegate: PlayersViewControllerDelegate?
     
@@ -39,6 +36,19 @@ class PlayersViewController: UIViewController {
         self.playersTableView.register(cellNib, forCellReuseIdentifier: "PlayerCell")
         
         self.bindToKeyboard()
+        
+        do {
+            let realm = try Realm()
+            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
+            players = realmDataProvider.loadPlayers()
+        } catch {
+            // TODO : Could not create database
+        }
+        
+        if players.count == 0 {
+            self.showVisualEffectViewWithAnimation()
+            self.showAddPlayerView()
+        }
     }
     
     deinit {
@@ -46,9 +56,11 @@ class PlayersViewController: UIViewController {
     }
     
     @IBAction func tappedOnVisualEffectView(_ sender: UITapGestureRecognizer) {
-        self.addPlayerView.nameTextField.resignFirstResponder()
-        self.hideAddPlayerView()
-        self.hideVisualEffectViewWithAnimation()
+        if players.count != 0 {
+            self.addPlayerView.nameTextField.resignFirstResponder()
+            self.hideAddPlayerView()
+            self.hideVisualEffectViewWithAnimation()
+        }
     }
     
     @IBAction func addPlayerButtonTapped(_ sender: AddButton) {
@@ -132,8 +144,17 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
                 return
             }
             
-            statsViewController.player.name = self.players[indexPath.row].name
-            statsViewController.player.race = self.players[indexPath.row].race
+            let name = self.players[indexPath.row].name
+            
+            do {
+                let realm = try Realm()
+                let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
+                statsViewController.player = realmDataProvider.loadPlayer(name: name)
+            } catch {
+                // TODO : Could not create database
+            }
+            
+            // TODO: tell statsviewcontroller whitch player to show
             
             self.delegate?.updateUI()
             
@@ -143,6 +164,18 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let name = players[indexPath.row].name
+            
+            do {
+                let realm = try Realm()
+                let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
+                realmDataProvider.deletePlayer(name: name) {
+                    // TODO: onFail
+                }
+            } catch {
+                // TODO : Could not create database
+            }
+            
             self.players.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -155,7 +188,19 @@ extension PlayersViewController: AddPlayerDelegate {
             return
         }
         
-        self.players.append(Player(name: name, race: playerResult.race))
+        let player = Player(name: name, race: playerResult.race, stats: Stats(vsHuman: Desc(), vsElf: Desc(), vsOrc: Desc(), vsUndead: Desc()))
+        
+        do {
+            let realm = try Realm()
+            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
+            realmDataProvider.savePlayer(player: player) {
+                // TODO : onFail
+            }
+        } catch {
+            // TODO : Could not create database
+        }
+        
+        self.players.append(player)
         self.playersTableView.reloadData()
         
         self.hideAddPlayerView()

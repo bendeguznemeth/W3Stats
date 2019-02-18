@@ -18,4 +18,12 @@ class Stats {
         self.vsOrc = vsOrc
         self.vsUndead = vsUndead
     }
+    
+    convenience init?(vsHuman: Desc?, vsElf: Desc?, vsOrc: Desc?, vsUndead: Desc?) {
+        guard let vsHuman = vsHuman, let vsElf = vsElf, let vsOrc = vsOrc, let vsUndead = vsUndead else {
+            return nil
+        }
+        
+        self.init(vsHuman: vsHuman, vsElf: vsElf, vsOrc: vsOrc, vsUndead: vsUndead)
+    }
 }

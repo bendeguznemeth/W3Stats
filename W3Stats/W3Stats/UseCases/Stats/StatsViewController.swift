@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class StatsViewController: UIViewController {
     
@@ -27,16 +28,18 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
     
-    var player = PlayerWithStats(name: "Balázs Papp", race: .human, stats: Stats(vsHuman: Desc(wins: 23, losses: 11),
-                                                                                     vsElf: Desc(wins: 22, losses: 8),
-                                                                                     vsOrc: Desc(wins: 33, losses: 14),
-                                                                                     vsUndead: Desc(wins: 21, losses: 9)))
+    var player: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
+        
+        guard let _ = player else {
+            self.presentPlayersViewController()
+            return
+        }
         
         self.showStats()
     }
@@ -52,19 +55,23 @@ class StatsViewController: UIViewController {
     }
     
     private func showStats() {
-        let vsHumanStat = self.calculateStat(wins: self.player.stats.vsHuman.wins, losses: self.player.stats.vsHuman.losses)
+        guard let player = self.player else {
+            return
+        }
+        
+        let vsHumanStat = self.calculateStat(wins: player.stats.vsHuman.wins, losses: player.stats.vsHuman.losses)
         let vsHumanViewContent = self.getVersusViewContent(from: vsHumanStat, for: .human)
         self.vsHumanView.displayContent(vsHumanViewContent)
         
-        let vsElfStat = self.calculateStat(wins: self.player.stats.vsElf.wins, losses: self.player.stats.vsElf.losses)
+        let vsElfStat = self.calculateStat(wins: player.stats.vsElf.wins, losses: player.stats.vsElf.losses)
         let vsElfViewContent = self.getVersusViewContent(from: vsElfStat, for: .elf)
         self.vsElfView.displayContent(vsElfViewContent)
         
-        let vsOrcStat = self.calculateStat(wins: self.player.stats.vsOrc.wins, losses: self.player.stats.vsOrc.losses)
+        let vsOrcStat = self.calculateStat(wins: player.stats.vsOrc.wins, losses: player.stats.vsOrc.losses)
         let vsOrcViewContent = self.getVersusViewContent(from: vsOrcStat, for: .orc)
         self.vsOrcView.displayContent(vsOrcViewContent)
         
-        let vsUndeadStat = self.calculateStat(wins: self.player.stats.vsUndead.wins, losses: self.player.stats.vsUndead.losses)
+        let vsUndeadStat = self.calculateStat(wins: player.stats.vsUndead.wins, losses: player.stats.vsUndead.losses)
         let vsUndeadViewContent = self.getVersusViewContent(from: vsUndeadStat, for: .undead)
         self.vsUndeadView.displayContent(vsUndeadViewContent)
         
@@ -72,8 +79,8 @@ class StatsViewController: UIViewController {
         let losses = vsHumanStat.losses + vsElfStat.losses + vsOrcStat.losses + vsUndeadStat.losses
         
         let playerStat = self.calculateStat(wins: wins, losses: losses)
-        let playerViewContent = PlayerViewContent.init(playerImageName: self.player.race.rawValue,
-                                                       name: self.player.name,
+        let playerViewContent = PlayerViewContent.init(playerImageName: player.race.rawValue,
+                                                       name: player.name,
                                                        percentage: "\(playerStat.percentage) %",
             total: "\(playerStat.total)",
             wins: "\(playerStat.wins)",
@@ -83,7 +90,14 @@ class StatsViewController: UIViewController {
     
     private func calculateStat(wins: Int, losses: Int) -> Stat {
         let total = wins + losses
-        let percentage = Double(wins) / Double(total) * 100
+        var percentage = 100.0
+        
+        if total != 0 {
+             percentage = Double(wins) / Double(total) * 100
+        } else {
+            percentage = 100.0
+        }
+       
         return Stat(wins: wins, losses: losses, total: total, percentage: Int(percentage))
     }
     
@@ -147,31 +161,45 @@ class StatsViewController: UIViewController {
 
 extension StatsViewController: MatchResultDelegate {
     func addNewMatchResult(_ matchResult: MatchResult) {
+        guard let player = self.player else {
+            return
+        }
+        
         switch matchResult.vsRace {
         case .human:
-            if matchResult.win {
-                self.player.stats.vsHuman.wins += 1
+            if matchResult.resultType == .win {
+                player.stats.vsHuman.wins += 1
             } else {
-                self.player.stats.vsHuman.losses += 1
+                player.stats.vsHuman.losses += 1
             }
         case .elf:
-            if matchResult.win {
-                self.player.stats.vsElf.wins += 1
+            if matchResult.resultType == .win {
+                player.stats.vsElf.wins += 1
             } else {
-                self.player.stats.vsElf.losses += 1
+                player.stats.vsElf.losses += 1
             }
         case .orc:
-            if matchResult.win {
-                self.player.stats.vsOrc.wins += 1
+            if matchResult.resultType == .win {
+                player.stats.vsOrc.wins += 1
             } else {
-                self.player.stats.vsOrc.losses += 1
+                player.stats.vsOrc.losses += 1
             }
         case .undead:
-            if matchResult.win {
-                self.player.stats.vsUndead.wins += 1
+            if matchResult.resultType == .win {
+                player.stats.vsUndead.wins += 1
             } else {
-                self.player.stats.vsUndead.losses += 1
+                player.stats.vsUndead.losses += 1
             }
+        }
+        
+        do {
+            let realm = try Realm()
+            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
+            realmDataProvider.updatePlayer(player: player) {
+                // TODO: onFail
+            }
+        } catch {
+            // TODO : Could not create database
         }
         
         self.showStats()

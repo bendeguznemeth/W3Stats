@@ -12,11 +12,6 @@ protocol MatchResultDelegate {
     func addNewMatchResult(_ matchResult: MatchResult)
 }
 
-struct MatchResult {
-    var vsRace: Race
-    var win: Bool
-}
-
 class AddMatchResultView: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -24,7 +19,7 @@ class AddMatchResultView: UIView {
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var loseLabel: UILabel!
     
-    private var matchResult = MatchResult(vsRace: .human, win: true)
+    private var matchResult = MatchResult.init(vsRace: .human, resultType: .win)
     
     var delegate: MatchResultDelegate?
     
@@ -54,14 +49,14 @@ class AddMatchResultView: UIView {
         self.loseLabel.alpha = 0.2
         self.winLabel.alpha = 1
         
-        self.matchResult.win = true
+        self.matchResult.resultType = .win
     }
     
     @IBAction func tapOnLose(_ sender: UITapGestureRecognizer) {
         self.winLabel.alpha = 0.2
         self.loseLabel.alpha = 1
         
-        self.matchResult.win = false
+        self.matchResult.resultType = .lose
     }
     
     @IBAction func tapOnSave(_ sender: UIButton) {
