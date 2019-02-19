@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerView" customModule="W3Stats" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="90Z-yC-zaZ"/>
                 <outlet property="innerView" destination="Jmp-xk-xdx" id="lom-3P-PhF"/>
                 <outlet property="lossesLabel" destination="pI0-tf-7Pu" id="9Tv-eo-an4"/>
                 <outlet property="nameLabel" destination="C44-bc-Jfw" id="QbG-7y-Oat"/>

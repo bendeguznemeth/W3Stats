@@ -9,22 +9,26 @@
 import UIKit
 
 protocol AddPlayerDelegate {
-    func addNewPlayer(_ playerResult: PlayerResult)
-}
-
-struct PlayerResult {
-    var name: String?
-    var race: Race
+    func addNewPlayer(_ playerResult: AddPlayerView.NewPlayer)
 }
 
 class AddPlayerView: UIView {
     
-    @IBOutlet var contentView: UIView!
+    struct NewPlayer {
+        var name: String
+        var race: Race
+        
+        init() {
+            self.name = ""
+            self.race = .human
+        }
+    }
+    
     @IBOutlet weak var racePickerView: UIPickerView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    private var playerResult = PlayerResult(name: nil, race: .human)
+    private var playerResult = NewPlayer()
     
     var delegate: AddPlayerDelegate?
     
@@ -39,10 +43,10 @@ class AddPlayerView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("AddPlayerView", owner: self, options: nil)
-        self.addSubview(contentView)
-        self.contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let view: UIView = Bundle.main.loadNibNamed("AddPlayerView", owner: self, options: nil)![0] as! UIView
+        self.addSubview(view)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.racePickerView.dataSource = self
         self.racePickerView.delegate = self

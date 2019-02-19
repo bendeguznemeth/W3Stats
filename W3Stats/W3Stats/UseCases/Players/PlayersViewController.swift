@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 protocol PlayersViewControllerDelegate {
     func updateUI()
@@ -37,18 +36,15 @@ class PlayersViewController: UIViewController {
         
         self.bindToKeyboard()
         
-        do {
-            let realm = try Realm()
-            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
-            players = realmDataProvider.loadPlayers()
-        } catch {
-            // TODO : Could not create database
-        }
+        players = ObjectContainer.sharedInstance.dataProvider.loadPlayers()
         
         if players.count == 0 {
-            self.showVisualEffectViewWithAnimation()
             self.showAddPlayerView()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     deinit {
@@ -59,49 +55,24 @@ class PlayersViewController: UIViewController {
         if players.count != 0 {
             self.addPlayerView.nameTextField.resignFirstResponder()
             self.hideAddPlayerView()
-            self.hideVisualEffectViewWithAnimation()
         }
     }
     
     @IBAction func addPlayerButtonTapped(_ sender: AddButton) {
-        self.showVisualEffectViewWithAnimation()
         self.showAddPlayerView()
     }
     
-    private func showVisualEffectViewWithAnimation() {
-        self.visualEffectView.alpha = 0
-        self.visualEffectView.isHidden = false
-        self.view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        self.visualEffectView.alpha = 1
-                        self.view.layoutIfNeeded()
-        })
-    }
-    
-    private func hideVisualEffectViewWithAnimation() {
-        self.view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        self.visualEffectView.alpha = 0
-                        self.view.layoutIfNeeded()
-        },
-                       completion: { _ in
-                        self.visualEffectView.isHidden = true
-        })
-    }
-    
     private func showAddPlayerView() {
-        animate(with: -40)
+        self.blurBackground()
+        self.animateAddPayerView(to: -40)
     }
     
     private func hideAddPlayerView() {
-        animate(with: -260)
+        self.animateAddPayerView(to: -260)
+        self.unblurBackground()
     }
     
-    private func animate(with constant: CGFloat) {
+    private func animateAddPayerView(to constant: CGFloat) {
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.6,
@@ -115,6 +86,31 @@ class PlayersViewController: UIViewController {
         },
                        completion: nil
         )
+    }
+    
+    private func blurBackground() {
+        self.visualEffectView.alpha = 0
+        self.visualEffectView.isHidden = false
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 1
+                        self.view.layoutIfNeeded()
+        })
+    }
+    
+    private func unblurBackground() {
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 0
+                        self.view.layoutIfNeeded()
+        },
+                       completion: { _ in
+                        self.visualEffectView.isHidden = true
+        })
     }
 }
 
@@ -146,15 +142,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
             
             let name = self.players[indexPath.row].name
             
-            do {
-                let realm = try Realm()
-                let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
-                statsViewController.player = realmDataProvider.loadPlayer(name: name)
-            } catch {
-                // TODO : Could not create database
-            }
-            
-            // TODO: tell statsviewcontroller whitch player to show
+            statsViewController.player = ObjectContainer.sharedInstance.dataProvider.loadPlayer(name: name)
             
             self.delegate?.updateUI()
             
@@ -166,14 +154,8 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             let name = players[indexPath.row].name
             
-            do {
-                let realm = try Realm()
-                let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
-                realmDataProvider.deletePlayer(name: name) {
-                    // TODO: onFail
-                }
-            } catch {
-                // TODO : Could not create database
+            ObjectContainer.sharedInstance.dataProvider.deletePlayer(name: name) {
+                // TODO: onFail
             }
             
             self.players.remove(at: indexPath.row)
@@ -183,28 +165,17 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension PlayersViewController: AddPlayerDelegate {
-    func addNewPlayer(_ playerResult: PlayerResult) {
-        guard let name = playerResult.name else {
-            return
-        }
+    func addNewPlayer(_ playerResult: AddPlayerView.NewPlayer) {
+        let player = Player(name: playerResult.name, race: playerResult.race, stats: Stats(vsHuman: Desc(), vsElf: Desc(), vsOrc: Desc(), vsUndead: Desc()))
         
-        let player = Player(name: name, race: playerResult.race, stats: Stats(vsHuman: Desc(), vsElf: Desc(), vsOrc: Desc(), vsUndead: Desc()))
-        
-        do {
-            let realm = try Realm()
-            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
-            realmDataProvider.savePlayer(player: player) {
-                // TODO : onFail
-            }
-        } catch {
-            // TODO : Could not create database
+        ObjectContainer.sharedInstance.dataProvider.savePlayer(player: player) {
+            // TODO : onFail
         }
         
         self.players.append(player)
         self.playersTableView.reloadData()
         
         self.hideAddPlayerView()
-        self.hideVisualEffectViewWithAnimation()
     }
 }
 

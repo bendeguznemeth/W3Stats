@@ -9,29 +9,19 @@
 import UIKit
 
 class AddButton: UIButton {
-    
-    private var hasSet = false
-    
-    override var bounds: CGRect {
-        didSet {
-            if oldValue != bounds {
-                hasSet = false
-            }
-        }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if !hasSet {
-            self.backgroundColor = self.gradientColor(from: self.bounds)
-            hasSet = true
-        }
-    }
-    
+
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.clipsToBounds = true
         self.layer.cornerRadius = self.frame.size.width / 2
+        
+        guard let color = self.gradientColor(from: rect), let currentContext = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        
+        self.backgroundColor = color
+        self.backgroundColor?.setFill()
+        currentContext.fill(rect);
     }
     
     private func gradientColor(from frame: CGRect) -> UIColor? {

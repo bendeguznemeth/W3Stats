@@ -12,8 +12,11 @@ struct MatchResult {
         case win, lose
     }
     
-    // TODO: let
     var vsRace: Race
     var resultType: ResultType
     
+    init() {
+        self.vsRace = .human
+        self.resultType = .win
+    }
 }

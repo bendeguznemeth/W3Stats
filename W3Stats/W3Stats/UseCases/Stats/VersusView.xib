@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="lgg-xk-lPI"/>
                 <outlet property="innerView" destination="efU-pY-Ffm" id="5sz-gq-9W5"/>
                 <outlet property="lossesLabel" destination="11T-Ng-zTj" id="W8Z-Lx-XXX"/>
                 <outlet property="percentageLabel" destination="wd8-70-9AA" id="my7-kP-Rzj"/>

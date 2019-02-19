@@ -7,16 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
 class StatsViewController: UIViewController {
-    
-    struct Stat {
-        let wins: Int
-        let losses: Int
-        let total: Int
-        let percentage: Int
-    }
     
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var vsHumanView: VersusView!
@@ -44,6 +36,10 @@ class StatsViewController: UIViewController {
         self.showStats()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @IBAction func addMatchButtonTapped(_ sender: AddButton) {
         self.showVisualEffectViewWithAnimation()
         self.showAddMatchResultView()
@@ -59,26 +55,26 @@ class StatsViewController: UIViewController {
             return
         }
         
-        let vsHumanStat = self.calculateStat(wins: player.stats.vsHuman.wins, losses: player.stats.vsHuman.losses)
+        let vsHumanStat = StatsUtil.calculateStat(wins: player.stats.vsHuman.wins, losses: player.stats.vsHuman.losses)
         let vsHumanViewContent = self.getVersusViewContent(from: vsHumanStat, for: .human)
         self.vsHumanView.displayContent(vsHumanViewContent)
         
-        let vsElfStat = self.calculateStat(wins: player.stats.vsElf.wins, losses: player.stats.vsElf.losses)
+        let vsElfStat = StatsUtil.calculateStat(wins: player.stats.vsElf.wins, losses: player.stats.vsElf.losses)
         let vsElfViewContent = self.getVersusViewContent(from: vsElfStat, for: .elf)
         self.vsElfView.displayContent(vsElfViewContent)
         
-        let vsOrcStat = self.calculateStat(wins: player.stats.vsOrc.wins, losses: player.stats.vsOrc.losses)
+        let vsOrcStat = StatsUtil.calculateStat(wins: player.stats.vsOrc.wins, losses: player.stats.vsOrc.losses)
         let vsOrcViewContent = self.getVersusViewContent(from: vsOrcStat, for: .orc)
         self.vsOrcView.displayContent(vsOrcViewContent)
         
-        let vsUndeadStat = self.calculateStat(wins: player.stats.vsUndead.wins, losses: player.stats.vsUndead.losses)
+        let vsUndeadStat = StatsUtil.calculateStat(wins: player.stats.vsUndead.wins, losses: player.stats.vsUndead.losses)
         let vsUndeadViewContent = self.getVersusViewContent(from: vsUndeadStat, for: .undead)
         self.vsUndeadView.displayContent(vsUndeadViewContent)
         
         let wins = vsHumanStat.wins + vsElfStat.wins + vsOrcStat.wins + vsUndeadStat.wins
         let losses = vsHumanStat.losses + vsElfStat.losses + vsOrcStat.losses + vsUndeadStat.losses
         
-        let playerStat = self.calculateStat(wins: wins, losses: losses)
+        let playerStat = StatsUtil.calculateStat(wins: wins, losses: losses)
         let playerViewContent = PlayerViewContent.init(playerImageName: player.race.rawValue,
                                                        name: player.name,
                                                        percentage: "\(playerStat.percentage) %",
@@ -86,19 +82,6 @@ class StatsViewController: UIViewController {
             wins: "\(playerStat.wins)",
             losses: "\(playerStat.losses)")
         self.playerView.displayContent(playerViewContent)
-    }
-    
-    private func calculateStat(wins: Int, losses: Int) -> Stat {
-        let total = wins + losses
-        var percentage = 100.0
-        
-        if total != 0 {
-             percentage = Double(wins) / Double(total) * 100
-        } else {
-            percentage = 100.0
-        }
-       
-        return Stat(wins: wins, losses: losses, total: total, percentage: Int(percentage))
     }
     
     private func getVersusViewContent(from stat: Stat, for race: Race) -> VersusViewContent {
@@ -165,41 +148,33 @@ extension StatsViewController: MatchResultDelegate {
             return
         }
         
-        switch matchResult.vsRace {
-        case .human:
-            if matchResult.resultType == .win {
+        switch matchResult.resultType {
+        case .win:
+            switch matchResult.vsRace {
+            case .human:
                 player.stats.vsHuman.wins += 1
-            } else {
-                player.stats.vsHuman.losses += 1
-            }
-        case .elf:
-            if matchResult.resultType == .win {
+            case .elf:
                 player.stats.vsElf.wins += 1
-            } else {
-                player.stats.vsElf.losses += 1
-            }
-        case .orc:
-            if matchResult.resultType == .win {
+            case .orc:
                 player.stats.vsOrc.wins += 1
-            } else {
-                player.stats.vsOrc.losses += 1
-            }
-        case .undead:
-            if matchResult.resultType == .win {
+            case .undead:
                 player.stats.vsUndead.wins += 1
-            } else {
+            }
+        case .lose:
+            switch matchResult.vsRace {
+            case .human:
+                player.stats.vsHuman.losses += 1
+            case .elf:
+                player.stats.vsElf.losses += 1
+            case .orc:
+                player.stats.vsOrc.losses += 1
+            case .undead:
                 player.stats.vsUndead.losses += 1
             }
         }
         
-        do {
-            let realm = try Realm()
-            let realmDataProvider: DataProviding = RealmDataProvider(realm: realm)
-            realmDataProvider.updatePlayer(player: player) {
-                // TODO: onFail
-            }
-        } catch {
-            // TODO : Could not create database
+        ObjectContainer.sharedInstance.dataProvider.updatePlayer(player: player) {
+            // TODO: onFail
         }
         
         self.showStats()

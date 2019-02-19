@@ -23,7 +23,6 @@ struct PlayerViewContent {
 
 class PlayerView: UIView {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -45,10 +44,10 @@ class PlayerView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)
-        self.addSubview(contentView)
-        self.contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let view: UIView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)![0] as! UIView
+        self.addSubview(view)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.innerView.layer.cornerRadius = 15
     }

@@ -18,7 +18,6 @@ struct VersusViewContent {
 
 class VersusView: UIView {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var raceImageView: UIImageView!
     @IBOutlet weak var percentageLabel: UILabel!
@@ -37,10 +36,10 @@ class VersusView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("VersusView", owner: self, options: nil)
-        self.addSubview(contentView)
-        self.contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let view: UIView = Bundle.main.loadNibNamed("VersusView", owner: self, options: nil)![0] as! UIView
+        self.addSubview(view)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.innerView.layer.cornerRadius = 15
     }

@@ -10,13 +10,12 @@ class Desc {
     var wins: Int
     var losses: Int
     
-    init() {
-        self.wins = 0
-        self.losses = 0
-    }
-    
     init(wins: Int, losses: Int) {
         self.wins = wins
         self.losses = losses
+    }
+    
+    convenience init() {
+        self.init(wins: 0, losses: 0)
     }
 }

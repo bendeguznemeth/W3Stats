@@ -14,12 +14,11 @@ protocol MatchResultDelegate {
 
 class AddMatchResultView: UIView {
     
-    @IBOutlet var contentView: UIView!
     @IBOutlet weak var racePickerView: UIPickerView!
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var loseLabel: UILabel!
     
-    private var matchResult = MatchResult.init(vsRace: .human, resultType: .win)
+    private var matchResult = MatchResult()
     
     var delegate: MatchResultDelegate?
     
@@ -34,10 +33,10 @@ class AddMatchResultView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("AddMatchResultView", owner: self, options: nil)
-        self.addSubview(contentView)
-        self.contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let view: UIView = Bundle.main.loadNibNamed("AddMatchResultView", owner: self, options: nil)![0] as! UIView
+        self.addSubview(view)
+        view.frame = self.bounds
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         self.racePickerView.dataSource = self
         self.racePickerView.delegate = self
