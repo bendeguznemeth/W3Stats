@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PlayersViewControllerDelegate {
-    func updateUI()
+    func updateStatsForPlayer(_ playerName: String)
 }
 
 class PlayersViewController: UIViewController {
@@ -22,6 +22,8 @@ class PlayersViewController: UIViewController {
     var players = [Player]()
     
     var delegate: PlayersViewControllerDelegate?
+    
+    private let provider: DataProviding = ObjectContainer.sharedInstance.dataProvider
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +38,11 @@ class PlayersViewController: UIViewController {
         
         self.bindToKeyboard()
         
-        players = ObjectContainer.sharedInstance.dataProvider.loadPlayers()
+        players = self.provider.loadPlayers()
         
         if players.count == 0 {
             self.showAddPlayerView()
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     deinit {
@@ -136,15 +134,9 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
-            guard let statsViewController = self.presentingViewController as? StatsViewController else {
-                return
-            }
+            let playerName = self.players[indexPath.row].name
             
-            let name = self.players[indexPath.row].name
-            
-            statsViewController.player = ObjectContainer.sharedInstance.dataProvider.loadPlayer(name: name)
-            
-            self.delegate?.updateUI()
+            self.delegate?.updateStatsForPlayer(playerName)
             
             self.dismiss(animated: true, completion: nil)
         }
@@ -154,7 +146,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             let name = players[indexPath.row].name
             
-            ObjectContainer.sharedInstance.dataProvider.deletePlayer(name: name) {
+            self.provider.deletePlayer(name: name) {
                 // TODO: onFail
             }
             
@@ -168,7 +160,7 @@ extension PlayersViewController: AddPlayerDelegate {
     func addNewPlayer(_ playerResult: AddPlayerView.NewPlayer) {
         let player = Player(name: playerResult.name, race: playerResult.race, stats: Stats(vsHuman: Desc(), vsElf: Desc(), vsOrc: Desc(), vsUndead: Desc()))
         
-        ObjectContainer.sharedInstance.dataProvider.savePlayer(player: player) {
+        self.provider.savePlayer(player: player) {
             // TODO : onFail
         }
         

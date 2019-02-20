@@ -22,32 +22,32 @@ class StatsViewController: UIViewController {
     
     var player: Player?
     
+    private let provider: DataProviding = ObjectContainer.sharedInstance.dataProvider
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
         
-        guard let _ = player else {
-            self.presentPlayersViewController()
-            return
-        }
+        self.presentPlayersVCWhenNoPlayerAvailable()
         
         self.showStats()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     @IBAction func addMatchButtonTapped(_ sender: AddButton) {
-        self.showVisualEffectViewWithAnimation()
         self.showAddMatchResultView()
     }
     
     @IBAction func tappedOnVisualEffectView(_ sender: UITapGestureRecognizer) {
         self.hideAddMatchResultView()
-        self.hideVisualEffectViewWithAnimation()
+    }
+    
+    private func presentPlayersVCWhenNoPlayerAvailable() {
+        guard player != nil else {
+            self.presentPlayersViewController()
+            return
+        }
     }
     
     private func showStats() {
@@ -92,40 +92,18 @@ class StatsViewController: UIViewController {
             losses: "\(stat.losses)")
     }
     
-    private func showVisualEffectViewWithAnimation() {
-        self.visualEffectView.alpha = 0
-        self.visualEffectView.isHidden = false
-        self.view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        self.visualEffectView.alpha = 1
-                        self.view.layoutIfNeeded()
-        })
-    }
-    
-    private func hideVisualEffectViewWithAnimation() {
-        self.view.layoutIfNeeded()
-        
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        self.visualEffectView.alpha = 0
-                        self.view.layoutIfNeeded()
-        },
-                       completion: { _ in
-                        self.visualEffectView.isHidden = true
-        })
-    }
-    
     private func showAddMatchResultView() {
-        animate(with: -40)
+        // TODO: animate height of view instead of moving it
+        self.blurBackground()
+        animateAddMatchResultView(to: -40)
     }
     
     private func hideAddMatchResultView() {
-        animate(with: -280)
+        animateAddMatchResultView(to: -280)
+        self.unblurBackground()
     }
     
-    private func animate(with constant: CGFloat) {
+    private func animateAddMatchResultView(to constant: CGFloat) {
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.6,
@@ -139,6 +117,31 @@ class StatsViewController: UIViewController {
         },
                        completion: nil
         )
+    }
+    
+    private func blurBackground() {
+        self.visualEffectView.alpha = 0
+        self.visualEffectView.isHidden = false
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 1
+                        self.view.layoutIfNeeded()
+        })
+    }
+    
+    private func unblurBackground() {
+        self.view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
+                        self.visualEffectView.alpha = 0
+                        self.view.layoutIfNeeded()
+        },
+                       completion: { _ in
+                        self.visualEffectView.isHidden = true
+        })
     }
 }
 
@@ -173,14 +176,14 @@ extension StatsViewController: MatchResultDelegate {
             }
         }
         
-        ObjectContainer.sharedInstance.dataProvider.updatePlayer(player: player) {
+        self.provider.updatePlayer(player: player) {
             // TODO: onFail
         }
         
         self.showStats()
         
         self.hideAddMatchResultView()
-        self.hideVisualEffectViewWithAnimation()
+        self.unblurBackground()
     }
 }
 
@@ -200,7 +203,8 @@ extension StatsViewController: PlayerViewDelegate {
 }
 
 extension StatsViewController: PlayersViewControllerDelegate {
-    func updateUI() {
+    func updateStatsForPlayer(_ playerName: String) {
+        self.player = self.provider.loadPlayer(name: playerName)
         self.showStats()
     }
 }
