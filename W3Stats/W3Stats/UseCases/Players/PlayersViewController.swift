@@ -17,6 +17,7 @@ class PlayersViewController: UIViewController {
     @IBOutlet weak var playersTableView: UITableView!
     @IBOutlet weak var addPlayerView: AddPlayerView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var addPlayerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPlayerViewBottomConstraint: NSLayoutConstraint!
     
     var players = [Player]()
@@ -62,15 +63,15 @@ class PlayersViewController: UIViewController {
     
     private func showAddPlayerView() {
         self.blurBackground()
-        self.animateAddPayerView(to: -40)
+        self.animateAddPayerViewHeight(to: 260)
     }
     
     private func hideAddPlayerView() {
-        self.animateAddPayerView(to: -260)
+        self.animateAddPayerViewHeight(to: 0)
         self.unblurBackground()
     }
     
-    private func animateAddPayerView(to constant: CGFloat) {
+    private func animateAddPayerViewHeight(to constant: CGFloat) {
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.6,
@@ -79,7 +80,7 @@ class PlayersViewController: UIViewController {
                        initialSpringVelocity: 0.1,
                        options: [.curveLinear],
                        animations: {
-                        self.addPlayerViewBottomConstraint.constant = constant
+                        self.addPlayerViewHeightConstraint.constant = constant
                         self.view.layoutIfNeeded()
         },
                        completion: nil
@@ -199,9 +200,9 @@ extension PlayersViewController {
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             if endFrameY >= UIScreen.main.bounds.size.height {
-                self.addPlayerViewBottomConstraint?.constant = 0.0
+                self.addPlayerViewBottomConstraint.constant = 0.0
             } else {
-                self.addPlayerViewBottomConstraint?.constant = endFrame?.size.height ?? 0.0
+                self.addPlayerViewBottomConstraint.constant = endFrame?.size.height ?? 0.0
             }
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),

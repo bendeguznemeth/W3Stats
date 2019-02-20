@@ -18,7 +18,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var addMatchResultView: AddMatchResultView!
     
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    @IBOutlet weak var addMatchResultViewBottomContraint: NSLayoutConstraint!
+    @IBOutlet weak var addMatchResultViewHeightConstraint: NSLayoutConstraint!
     
     var player: Player?
     
@@ -95,15 +95,15 @@ class StatsViewController: UIViewController {
     private func showAddMatchResultView() {
         // TODO: animate height of view instead of moving it
         self.blurBackground()
-        animateAddMatchResultView(to: -40)
+        animateAddMatchResultViewHeight(to: 280)
     }
     
     private func hideAddMatchResultView() {
-        animateAddMatchResultView(to: -280)
+        animateAddMatchResultViewHeight(to: 0)
         self.unblurBackground()
     }
     
-    private func animateAddMatchResultView(to constant: CGFloat) {
+    private func animateAddMatchResultViewHeight(to constant: CGFloat) {
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.6,
@@ -112,7 +112,7 @@ class StatsViewController: UIViewController {
                        initialSpringVelocity: 0.1,
                        options: [.curveLinear],
                        animations: {
-                        self.addMatchResultViewBottomContraint.constant = constant
+                        self.addMatchResultViewHeightConstraint.constant = constant
                         self.view.layoutIfNeeded()
         },
                        completion: nil

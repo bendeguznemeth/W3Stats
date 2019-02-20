@@ -94,10 +94,10 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-gX-3DF" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1220" width="375" height="280"/>
+                                <rect key="frame" x="0.0" y="1220" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="oZj-CT-cLQ"/>
+                                    <constraint firstAttribute="height" id="oZj-CT-cLQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -113,7 +113,7 @@
                             <constraint firstItem="dyO-gX-3DF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SQO-U0-S4m"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VnM-0z-Aqr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVs-lt-pqz" secondAttribute="bottom" id="Z1i-vG-8JB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dyO-gX-3DF" secondAttribute="bottom" constant="-280" id="ePQ-6k-SzO"/>
+                            <constraint firstAttribute="bottom" secondItem="dyO-gX-3DF" secondAttribute="bottom" id="ePQ-6k-SzO"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRK-V4-7VE"/>
                             <constraint firstItem="XVs-lt-pqz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l7I-8c-GMB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVs-lt-pqz" secondAttribute="trailing" id="ovv-aB-BGW"/>
@@ -126,7 +126,7 @@
                     <size key="freeformSize" width="375" height="1220"/>
                     <connections>
                         <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
-                        <outlet property="addMatchResultViewBottomContraint" destination="ePQ-6k-SzO" id="fev-XG-7ZM"/>
+                        <outlet property="addMatchResultViewHeightConstraint" destination="oZj-CT-cLQ" id="PAM-3q-iNe"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
                         <outlet property="visualEffectView" destination="XVs-lt-pqz" id="hL9-am-8wt"/>
                         <outlet property="vsElfView" destination="IaS-RB-ydZ" id="Nub-B5-5q2"/>
@@ -182,10 +182,10 @@
                                 </connections>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-2L-PP6" customClass="AddPlayerView" customModule="W3Stats" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="667" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="sTq-Jb-mPG"/>
+                                    <constraint firstAttribute="height" id="sTq-Jb-mPG"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -199,7 +199,7 @@
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="bottom" secondItem="Tru-2V-aix" secondAttribute="bottom" constant="20" id="OEP-Yg-vMT"/>
                             <constraint firstItem="vh3-9F-31m" firstAttribute="top" secondItem="6RY-Zx-HyA" secondAttribute="top" id="WAO-O1-Yb6"/>
                             <constraint firstItem="ady-Q4-0YX" firstAttribute="leading" secondItem="6RY-Zx-HyA" secondAttribute="leading" id="Xys-UR-ogS"/>
-                            <constraint firstItem="6RY-Zx-HyA" firstAttribute="bottom" secondItem="GGx-2L-PP6" secondAttribute="bottom" constant="-260" id="gt7-NE-DJp"/>
+                            <constraint firstAttribute="bottom" secondItem="GGx-2L-PP6" secondAttribute="bottom" id="gt7-NE-DJp"/>
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="bottom" secondItem="ady-Q4-0YX" secondAttribute="bottom" id="ned-Uw-VWS"/>
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="trailing" secondItem="Tru-2V-aix" secondAttribute="trailing" constant="20" id="t6K-tv-Klo"/>
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="trailing" secondItem="GGx-2L-PP6" secondAttribute="trailing" id="vyG-Gl-1vS"/>
@@ -209,7 +209,8 @@
                     </view>
                     <connections>
                         <outlet property="addPlayerView" destination="GGx-2L-PP6" id="Rtq-R9-TUz"/>
-                        <outlet property="addPlayerViewBottomConstraint" destination="gt7-NE-DJp" id="AeD-Y9-MBO"/>
+                        <outlet property="addPlayerViewBottomConstraint" destination="gt7-NE-DJp" id="tfb-Gm-yJ7"/>
+                        <outlet property="addPlayerViewHeightConstraint" destination="sTq-Jb-mPG" id="zUY-my-Pyy"/>
                         <outlet property="playersTableView" destination="ady-Q4-0YX" id="zsW-mQ-xlt"/>
                         <outlet property="visualEffectView" destination="vh3-9F-31m" id="URP-oL-kLg"/>
                     </connections>
