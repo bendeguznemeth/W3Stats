@@ -110,6 +110,11 @@ class PlayersViewController: UIViewController {
                         self.visualEffectView.isHidden = true
         })
     }
+    
+    private func presentAlertWithMessage(_ message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
@@ -147,7 +152,8 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate {
             let name = players[indexPath.row].name
             
             self.provider.deletePlayer(name: name) {
-                // TODO: onFail
+                self.presentAlertWithMessage("Failed to delete player.")
+                return
             }
             
             self.players.remove(at: indexPath.row)
@@ -161,7 +167,8 @@ extension PlayersViewController: AddPlayerDelegate {
         let player = Player(name: playerResult.name, race: playerResult.race, stats: Stats(vsHuman: Desc(), vsElf: Desc(), vsOrc: Desc(), vsUndead: Desc()))
         
         self.provider.savePlayer(player: player) {
-            // TODO : onFail
+            self.presentAlertWithMessage("Failed to save player.")
+            return
         }
         
         self.players.append(player)

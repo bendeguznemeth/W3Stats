@@ -143,6 +143,11 @@ class StatsViewController: UIViewController {
                         self.visualEffectView.isHidden = true
         })
     }
+    
+    private func presentAlertWithMessage(_ message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension StatsViewController: MatchResultDelegate {
@@ -177,7 +182,7 @@ extension StatsViewController: MatchResultDelegate {
         }
         
         self.provider.updatePlayer(player: player) {
-            // TODO: onFail
+            self.presentAlertWithMessage("Could not save new match result.")
         }
         
         self.showStats()
