@@ -54,6 +54,14 @@ class AddPlayerView: UIView {
         self.nameTextField.delegate = self
         
         self.racePickerView.selectRow(1, inComponent: 0, animated: false)
+        
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 30
+        self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        self.nameTextField.layer.cornerRadius = 20
+        self.nameTextField.layer.borderWidth = 0.25
+        self.nameTextField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
@@ -88,12 +96,23 @@ extension AddPlayerView: UIPickerViewDataSource, UIPickerViewDelegate {
         return Race.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Race.allRaces[row].displayableValue()
-    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.playerResult.race = Race.allRaces[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let racePickerViewCell = RacePickerViewCell()
+        let raceImageName = Race.allRaces[row].rawValue
+        let raceName = Race.allRaces[row].displayableValue()
+        let cellContent = RacePickerViewCellContent.init(raceImageName: raceImageName, raceName: raceName)
+        
+        racePickerViewCell.displayContent(cellContent)
+        
+        return racePickerViewCell
     }
 }
 

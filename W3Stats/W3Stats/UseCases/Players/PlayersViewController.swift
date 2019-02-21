@@ -63,7 +63,7 @@ class PlayersViewController: UIViewController {
     
     private func showAddPlayerView() {
         self.blurBackground()
-        self.animateAddPayerViewHeight(to: 260)
+        self.animateAddPayerViewHeight(to: 436)
     }
     
     private func hideAddPlayerView() {
