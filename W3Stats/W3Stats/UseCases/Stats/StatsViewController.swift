@@ -16,7 +16,6 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var vsOrcView: VersusView!
     @IBOutlet weak var vsUndeadView: VersusView!
     @IBOutlet weak var addMatchResultView: AddMatchResultView!
-    
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var addMatchResultViewHeightConstraint: NSLayoutConstraint!
     
@@ -35,11 +34,11 @@ class StatsViewController: UIViewController {
         self.showStats()
     }
     
-    @IBAction func addMatchButtonTapped(_ sender: AddButton) {
+    @IBAction func addMatchButtonTapped(_ sender: RoundedButton) {
         self.showAddMatchResultView()
     }
     
-    @IBAction func tappedOnVisualEffectView(_ sender: UITapGestureRecognizer) {
+    @IBAction func tappedOnBackground(_ sender: UITapGestureRecognizer) {
         self.hideAddMatchResultView()
     }
     
@@ -93,13 +92,12 @@ class StatsViewController: UIViewController {
     }
     
     private func showAddMatchResultView() {
-        // TODO: animate height of view instead of moving it
         self.blurBackground()
-        animateAddMatchResultViewHeight(to: 280)
+        self.animateAddMatchResultViewHeight(to: 500)
     }
     
     private func hideAddMatchResultView() {
-        animateAddMatchResultViewHeight(to: 0)
+        self.animateAddMatchResultViewHeight(to: 0)
         self.unblurBackground()
     }
     
@@ -188,7 +186,6 @@ extension StatsViewController: MatchResultDelegate {
         self.showStats()
         
         self.hideAddMatchResultView()
-        self.unblurBackground()
     }
 }
 

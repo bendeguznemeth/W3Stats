@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RacePickerViewCell" customModule="W3Stats" customModuleProvider="target">
+            <connections>
+                <outlet property="raceImageView" destination="axK-95-7ej" id="xdr-kH-866"/>
+                <outlet property="raceLabel" destination="xGH-pe-TM8" id="oLH-1G-wlT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="axK-95-7ej" userLabel="Race Image View">
+                    <rect key="frame" x="20" y="7.5" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="axK-95-7ej" secondAttribute="height" multiplier="1:1" id="3il-Kv-fhN"/>
+                        <constraint firstAttribute="height" constant="85" id="Xcd-CO-zwD"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGH-pe-TM8" userLabel="Race Label">
+                    <rect key="frame" x="147.5" y="39" width="80" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="awn-yw-b7h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="axK-95-7ej" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6Aa-ea-xYL"/>
+                <constraint firstItem="xGH-pe-TM8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7dc-lB-bwy"/>
+                <constraint firstItem="xGH-pe-TM8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mPm-P1-jhU"/>
+                <constraint firstItem="axK-95-7ej" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="uXb-t6-7KT"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.575712143928037"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default_player" width="54.545455932617188" height="54.545455932617188"/>
+    </resources>
+</document>

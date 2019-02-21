@@ -16,6 +16,8 @@
 		ED1F0AD7221AAEC00051B14D /* RealmDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AD6221AAEC00051B14D /* RealmDataProvider.swift */; };
 		ED1F0AD9221AAED30051B14D /* RealmDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AD8221AAED30051B14D /* RealmDataParser.swift */; };
 		ED1F0ADD221C2A180051B14D /* StatsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0ADC221C2A180051B14D /* StatsUtil.swift */; };
+		ED1F0AE3221ECE170051B14D /* RacePickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */; };
+		ED1F0AE5221ECE540051B14D /* RacePickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */; };
 		EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */; };
 		EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */; };
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
@@ -30,7 +32,7 @@
 		EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */; };
 		EDE6DCEF220D9B2500347D76 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */; };
 		EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */; };
-		EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF2220D9D0800347D76 /* AddButton.swift */; };
+		EDE6DCF3220D9D0800347D76 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF2220D9D0800347D76 /* RoundedButton.swift */; };
 		EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF4220D9E0900347D76 /* VersusView.swift */; };
 		EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCF6220D9E4100347D76 /* PlayerView.swift */; };
 		EDF87CC42212D19C003FC83F /* AddMatchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */; };
@@ -50,6 +52,8 @@
 		ED1F0AD6221AAEC00051B14D /* RealmDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataProvider.swift; sourceTree = "<group>"; };
 		ED1F0AD8221AAED30051B14D /* RealmDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataParser.swift; sourceTree = "<group>"; };
 		ED1F0ADC221C2A180051B14D /* StatsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUtil.swift; sourceTree = "<group>"; };
+		ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacePickerViewCell.xib; sourceTree = "<group>"; };
+		ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePickerViewCell.swift; sourceTree = "<group>"; };
 		EDE6DCC9220C5E8E00347D76 /* W3Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W3Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		EDE6DCEC220D9A6B00347D76 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
 		EDE6DCEE220D9B2500347D76 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		EDE6DCF0220D9B9B00347D76 /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
-		EDE6DCF2220D9D0800347D76 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		EDE6DCF2220D9D0800347D76 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EDE6DCF4220D9E0900347D76 /* VersusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersusView.swift; sourceTree = "<group>"; };
 		EDE6DCF6220D9E4100347D76 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMatchResultView.xib; sourceTree = "<group>"; };
@@ -199,6 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
+				EDE6DCF2220D9D0800347D76 /* RoundedButton.swift */,
+				ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */,
+				ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */,
 				EDE6DCFA220DA55400347D76 /* Stats */,
 				EDE6DCFB220DA56200347D76 /* Players */,
 			);
@@ -215,7 +222,6 @@
 				EDE6DCF4220D9E0900347D76 /* VersusView.swift */,
 				EDF87CC32212D19C003FC83F /* AddMatchResultView.xib */,
 				EDF87CC52212D8BC003FC83F /* AddMatchResultView.swift */,
-				EDE6DCF2220D9D0800347D76 /* AddButton.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */,
 				EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */,
 				EDF87CCA22145099003FC83F /* AddPlayerView.xib in Resources */,
+				ED1F0AE3221ECE170051B14D /* RacePickerViewCell.xib in Resources */,
 				EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */,
 				EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */,
 				EDE6DCEB220D98CD00347D76 /* VersusView.xib in Resources */,
@@ -368,12 +375,13 @@
 				ED1F0AD7221AAEC00051B14D /* RealmDataProvider.swift in Sources */,
 				EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */,
 				ED1F0AD9221AAED30051B14D /* RealmDataParser.swift in Sources */,
-				EDE6DCF3220D9D0800347D76 /* AddButton.swift in Sources */,
+				EDE6DCF3220D9D0800347D76 /* RoundedButton.swift in Sources */,
 				EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */,
 				ED1F0AD2221AAD380051B14D /* StatsObject.swift in Sources */,
 				EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */,
 				ED1F0ADD221C2A180051B14D /* StatsUtil.swift in Sources */,
 				EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */,
+				ED1F0AE5221ECE540051B14D /* RacePickerViewCell.swift in Sources */,
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Race.swift in Sources */,
 				ED1F0AD3221AAD380051B14D /* DescObject.swift in Sources */,

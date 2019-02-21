@@ -50,14 +50,14 @@ class PlayersViewController: UIViewController {
         self.unbindToKeyboard()
     }
     
-    @IBAction func tappedOnVisualEffectView(_ sender: UITapGestureRecognizer) {
+    @IBAction func tappedOnBackground(_ sender: UITapGestureRecognizer) {
         if players.count != 0 {
             self.addPlayerView.nameTextField.resignFirstResponder()
             self.hideAddPlayerView()
         }
     }
     
-    @IBAction func addPlayerButtonTapped(_ sender: AddButton) {
+    @IBAction func addPlayerButtonTapped(_ sender: RoundedButton) {
         self.showAddPlayerView()
     }
     

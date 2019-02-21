@@ -15,8 +15,8 @@ protocol MatchResultDelegate {
 class AddMatchResultView: UIView {
     
     @IBOutlet weak var racePickerView: UIPickerView!
-    @IBOutlet weak var winLabel: UILabel!
-    @IBOutlet weak var loseLabel: UILabel!
+    @IBOutlet weak var winButton: RoundedButton!
+    @IBOutlet weak var loseButton: RoundedButton!
     
     private var matchResult = MatchResult()
     
@@ -42,18 +42,22 @@ class AddMatchResultView: UIView {
         self.racePickerView.delegate = self
         
         self.racePickerView.selectRow(1, inComponent: 0, animated: false)
+        
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 30
+        self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-    @IBAction func tapOnWin(_ sender: UITapGestureRecognizer) {
-        self.loseLabel.alpha = 0.2
-        self.winLabel.alpha = 1
+    @IBAction func tapOnWin(_ sender: RoundedButton) {
+        self.loseButton.alpha = 0.3
+        self.winButton.alpha = 1
         
         self.matchResult.resultType = .win
     }
     
-    @IBAction func tapOnLose(_ sender: UITapGestureRecognizer) {
-        self.winLabel.alpha = 0.2
-        self.loseLabel.alpha = 1
+    @IBAction func tapOnLose(_ sender: RoundedButton) {
+        self.winButton.alpha = 0.3
+        self.loseButton.alpha = 1
         
         self.matchResult.resultType = .lose
     }
@@ -73,11 +77,22 @@ extension AddMatchResultView: UIPickerViewDataSource, UIPickerViewDelegate {
         return Race.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Race.allRaces[row].displayableValue()
-    }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.matchResult.vsRace = Race.allRaces[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let racePickerViewCell = RacePickerViewCell()
+        let raceImageName = Race.allRaces[row].rawValue
+        let raceName = Race.allRaces[row].displayableValue()
+        let cellContent = RacePickerViewCellContent.init(raceImageName: raceImageName, raceName: raceName)
+        
+        racePickerViewCell.displayContent(cellContent)
+        
+        return racePickerViewCell
     }
 }

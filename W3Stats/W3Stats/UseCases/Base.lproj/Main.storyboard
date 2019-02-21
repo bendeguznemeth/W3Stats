@@ -69,8 +69,9 @@
                                     <constraint firstAttribute="trailing" secondItem="8Cg-Ge-7uL" secondAttribute="trailing" id="uI1-lo-6zJ"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcA-Yv-COn" userLabel="Add Match Button" customClass="AddButton" customModule="W3Stats" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcA-Yv-COn" userLabel="Add Match Button" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
                                 <rect key="frame" x="295" y="1140" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LcA-Yv-COn" secondAttribute="height" multiplier="1:1" id="1aR-7N-GOT"/>
                                     <constraint firstAttribute="width" constant="60" id="m4C-jY-vgr"/>
@@ -138,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="PRK-gU-7f7">
                     <connections>
-                        <action selector="tappedOnVisualEffectView:" destination="BYZ-38-t0r" id="1TQ-wA-JPz"/>
+                        <action selector="tappedOnBackground:" destination="BYZ-38-t0r" id="1TQ-wA-JPz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -156,8 +157,9 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-2V-aix" userLabel="Add Player Button" customClass="AddButton" customModule="W3Stats" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tru-2V-aix" userLabel="Add Player Button" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
                                 <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="TTD-Bz-x8i"/>
                                     <constraint firstAttribute="width" secondItem="Tru-2V-aix" secondAttribute="height" multiplier="1:1" id="dsG-rt-nFC"/>
@@ -218,7 +220,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZ3-LJ-S13" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="qOx-Bf-EP0">
                     <connections>
-                        <action selector="tappedOnVisualEffectView:" destination="eM0-Il-RzF" id="Iyz-pb-aDe"/>
+                        <action selector="tappedOnBackground:" destination="eM0-Il-RzF" id="Iyz-pb-aDe"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

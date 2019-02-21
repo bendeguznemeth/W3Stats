@@ -12,94 +12,103 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
             <connections>
-                <outlet property="loseLabel" destination="Lu2-p9-leh" id="ej0-gW-RZx"/>
+                <outlet property="loseButton" destination="tXb-iE-Zyg" id="vRq-q5-u3c"/>
                 <outlet property="racePickerView" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
-                <outlet property="winLabel" destination="9cy-Rd-dtc" id="79s-bo-n7j"/>
+                <outlet property="winButton" destination="Rud-Yh-yZz" id="JWa-7Q-hUG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-QS-o7A" userLabel="Race Picker View">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <rect key="frame" x="30" y="20" width="315" height="300"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="120" id="W1V-Gx-Crn"/>
+                        <constraint firstAttribute="height" constant="300" id="W1V-Gx-Crn"/>
                     </constraints>
                 </pickerView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PEy-VQ-JHF" userLabel="WIN-LOSE Stack View">
-                    <rect key="frame" x="87.5" y="130" width="200" height="50"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVn-Gc-ETC">
+                    <rect key="frame" x="0.0" y="320" width="375" height="100"/>
                     <subviews>
-                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cy-Rd-dtc" userLabel="Win Label">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                            <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <gestureRecognizers/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SYz-rR-ESb">
+                            <rect key="frame" x="45" y="30" width="285" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rud-Yh-yZz" userLabel="WIN Button" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
+                                    <color key="backgroundColor" red="0.4823529411764706" green="0.87450980392156863" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="750" constant="130" id="PeX-TH-r6y"/>
+                                        <constraint firstAttribute="height" constant="40" id="pkN-e7-NPA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="WIN">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnWin:" destination="-1" eventType="touchUpInside" id="yAd-wM-7TC"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXb-iE-Zyg" userLabel="LOSE Button" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
+                                    <rect key="frame" x="155" y="0.0" width="130" height="40"/>
+                                    <color key="backgroundColor" red="0.87450980392156863" green="0.32156862745098036" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="pWO-ZH-fpX"/>
+                                        <constraint firstAttribute="width" priority="750" constant="130" id="yAA-tw-TEi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="LOSE">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnLose:" destination="-1" eventType="touchUpInside" id="cfr-TM-o7E"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="aMS-bo-0io"/>
-                                <constraint firstAttribute="height" constant="50" id="znd-s2-bbC"/>
+                                <constraint firstItem="Rud-Yh-yZz" firstAttribute="width" secondItem="tXb-iE-Zyg" secondAttribute="width" id="dBu-j1-Gy4"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="oNP-0d-bpV" appends="YES" id="hdp-jA-NnY"/>
-                            </connections>
-                        </label>
-                        <label opaque="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu2-p9-leh" userLabel="Lose Label">
-                            <rect key="frame" x="100" y="0.0" width="100" height="50"/>
-                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <gestureRecognizers/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="u0H-sa-bv4"/>
-                                <constraint firstAttribute="height" constant="50" id="zDc-Do-8fe"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="7Vv-Ob-Z1x" appends="YES" id="Ch2-08-ZxM"/>
-                            </connections>
-                        </label>
+                        </stackView>
                     </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-QX-gXe">
-                    <rect key="frame" x="147.5" y="190" width="80" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="LLa-xI-Jma"/>
+                        <constraint firstItem="SYz-rR-ESb" firstAttribute="centerX" secondItem="GVn-Gc-ETC" secondAttribute="centerX" id="1JD-uv-KjY"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SYz-rR-ESb" secondAttribute="trailing" constant="20" id="GZl-3N-eOF"/>
+                        <constraint firstItem="SYz-rR-ESb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GVn-Gc-ETC" secondAttribute="leading" constant="20" id="NNo-1j-ZFI"/>
+                        <constraint firstAttribute="bottom" secondItem="SYz-rR-ESb" secondAttribute="bottom" constant="30" id="OgE-vD-bpR"/>
+                        <constraint firstItem="SYz-rR-ESb" firstAttribute="top" secondItem="GVn-Gc-ETC" secondAttribute="top" constant="30" id="SBt-n6-mDx"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-QX-gXe" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
+                    <rect key="frame" x="122.5" y="450" width="130" height="40"/>
+                    <color key="backgroundColor" red="0.086274509803921567" green="0.10196078431372549" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="130" id="LLa-xI-Jma"/>
                         <constraint firstAttribute="height" constant="40" id="jDz-So-705"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Save"/>
                     <connections>
                         <action selector="tapOnSave:" destination="-1" eventType="touchUpInside" id="mUV-qv-WTx"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="DPr-QS-o7A" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="J3a-HC-lcp"/>
-                <constraint firstItem="PEy-VQ-JHF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q4K-ck-vAB"/>
-                <constraint firstItem="PEy-VQ-JHF" firstAttribute="top" secondItem="DPr-QS-o7A" secondAttribute="bottom" constant="10" id="cVf-KS-wdy"/>
-                <constraint firstItem="hUG-QX-gXe" firstAttribute="top" secondItem="PEy-VQ-JHF" secondAttribute="bottom" constant="10" id="mLW-ea-bjJ"/>
-                <constraint firstItem="DPr-QS-o7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qZM-8W-y7A"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DPr-QS-o7A" secondAttribute="trailing" constant="30" id="ESq-Zu-Gng"/>
+                <constraint firstItem="GVn-Gc-ETC" firstAttribute="top" secondItem="DPr-QS-o7A" secondAttribute="bottom" id="K3o-1R-LPM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GVn-Gc-ETC" secondAttribute="trailing" id="cXU-MF-Hlb"/>
+                <constraint firstItem="GVn-Gc-ETC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="h6U-3s-RZW"/>
+                <constraint firstItem="DPr-QS-o7A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="qZM-8W-y7A"/>
                 <constraint firstItem="DPr-QS-o7A" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uz9-bp-zh7"/>
                 <constraint firstItem="hUG-QX-gXe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vTa-j3-GwT"/>
+                <constraint firstItem="hUG-QX-gXe" firstAttribute="top" secondItem="GVn-Gc-ETC" secondAttribute="bottom" constant="30" id="vgE-8U-dmN"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="53.600000000000001" y="-125.93703148425789"/>
+            <point key="canvasLocation" x="114.40000000000001" y="-80.959520239880064"/>
         </view>
-        <tapGestureRecognizer id="oNP-0d-bpV" userLabel="Win Tap Gesture Recognizer">
-            <connections>
-                <action selector="tapOnWin:" destination="-1" id="FJu-8V-y9J"/>
-            </connections>
-        </tapGestureRecognizer>
-        <tapGestureRecognizer id="7Vv-Ob-Z1x" userLabel="Lose Tap Gesture Recognizer">
-            <connections>
-                <action selector="tapOnLose:" destination="-1" id="RjF-OO-DL9"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>
