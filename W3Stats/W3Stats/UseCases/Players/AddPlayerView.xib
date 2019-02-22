@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlayerView" customModule="W3Stats" customModuleProvider="target">
             <connections>
                 <outlet property="nameTextField" destination="i3g-ls-fDt" id="8W0-gt-cCe"/>
-                <outlet property="racePickerView" destination="fUH-HN-OGT" id="Mlb-cr-J6B"/>
+                <outlet property="racePicker" destination="fUH-HN-OGT" id="Mlb-cr-J6B"/>
                 <outlet property="saveButton" destination="YuJ-3m-V5y" id="X98-xu-qpg"/>
             </connections>
         </placeholder>

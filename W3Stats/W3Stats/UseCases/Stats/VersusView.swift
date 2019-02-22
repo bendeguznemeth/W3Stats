@@ -41,6 +41,8 @@ class VersusView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        self.backgroundColor = .clear
+        
         self.innerView.layer.cornerRadius = 15
     }
 

@@ -21,8 +21,9 @@ class PlayerCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.innerView.layer.cornerRadius = 15
+        self.innerView.layer.cornerRadius = 10
         self.selectionStyle = .none
+        self.backgroundColor = .clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

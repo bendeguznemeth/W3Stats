@@ -16,8 +16,8 @@
 		ED1F0AD7221AAEC00051B14D /* RealmDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AD6221AAEC00051B14D /* RealmDataProvider.swift */; };
 		ED1F0AD9221AAED30051B14D /* RealmDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AD8221AAED30051B14D /* RealmDataParser.swift */; };
 		ED1F0ADD221C2A180051B14D /* StatsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0ADC221C2A180051B14D /* StatsUtil.swift */; };
-		ED1F0AE3221ECE170051B14D /* RacePickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */; };
-		ED1F0AE5221ECE540051B14D /* RacePickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */; };
+		ED1F0AE3221ECE170051B14D /* RacePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1F0AE2221ECE170051B14D /* RacePickerView.xib */; };
+		ED1F0AE5221ECE540051B14D /* RacePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AE4221ECE540051B14D /* RacePickerView.swift */; };
 		EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */; };
 		EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */; };
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
@@ -52,8 +52,8 @@
 		ED1F0AD6221AAEC00051B14D /* RealmDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataProvider.swift; sourceTree = "<group>"; };
 		ED1F0AD8221AAED30051B14D /* RealmDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataParser.swift; sourceTree = "<group>"; };
 		ED1F0ADC221C2A180051B14D /* StatsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUtil.swift; sourceTree = "<group>"; };
-		ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacePickerViewCell.xib; sourceTree = "<group>"; };
-		ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePickerViewCell.swift; sourceTree = "<group>"; };
+		ED1F0AE2221ECE170051B14D /* RacePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacePickerView.xib; sourceTree = "<group>"; };
+		ED1F0AE4221ECE540051B14D /* RacePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePickerView.swift; sourceTree = "<group>"; };
 		EDE6DCC9220C5E8E00347D76 /* W3Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W3Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 			children = (
 				EDE6DCD0220C5E8E00347D76 /* Main.storyboard */,
 				EDE6DCF2220D9D0800347D76 /* RoundedButton.swift */,
-				ED1F0AE2221ECE170051B14D /* RacePickerViewCell.xib */,
-				ED1F0AE4221ECE540051B14D /* RacePickerViewCell.swift */,
+				ED1F0AE2221ECE170051B14D /* RacePickerView.xib */,
+				ED1F0AE4221ECE540051B14D /* RacePickerView.swift */,
 				EDE6DCFA220DA55400347D76 /* Stats */,
 				EDE6DCFB220DA56200347D76 /* Players */,
 			);
@@ -302,7 +302,7 @@
 				EDE6DCED220D9A6B00347D76 /* PlayerCell.xib in Resources */,
 				EDE6DCD7220C5E8F00347D76 /* LaunchScreen.storyboard in Resources */,
 				EDF87CCA22145099003FC83F /* AddPlayerView.xib in Resources */,
-				ED1F0AE3221ECE170051B14D /* RacePickerViewCell.xib in Resources */,
+				ED1F0AE3221ECE170051B14D /* RacePickerView.xib in Resources */,
 				EDE6DCD4220C5E8F00347D76 /* Assets.xcassets in Resources */,
 				EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */,
 				EDE6DCEB220D98CD00347D76 /* VersusView.xib in Resources */,
@@ -381,7 +381,7 @@
 				EDE6DCE5220D60F500347D76 /* Desc.swift in Sources */,
 				ED1F0ADD221C2A180051B14D /* StatsUtil.swift in Sources */,
 				EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */,
-				ED1F0AE5221ECE540051B14D /* RacePickerViewCell.swift in Sources */,
+				ED1F0AE5221ECE540051B14D /* RacePickerView.swift in Sources */,
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Race.swift in Sources */,
 				ED1F0AD3221AAD380051B14D /* DescObject.swift in Sources */,

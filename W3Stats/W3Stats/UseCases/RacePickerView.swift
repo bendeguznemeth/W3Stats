@@ -1,5 +1,5 @@
 //
-//  RacePickerViewCell.swift
+//  RacePickerView.swift
 //  W3Stats
 //
 //  Created by Németh Bendegúz on 2019. 02. 21..
@@ -13,7 +13,7 @@ struct RacePickerViewCellContent {
     let raceName: String
 }
 
-class RacePickerViewCell: UIView {
+class RacePickerView: UIView {
     
     @IBOutlet weak var raceImageView: UIImageView!
     @IBOutlet weak var raceLabel: UILabel!
@@ -29,7 +29,7 @@ class RacePickerViewCell: UIView {
     }
     
     private func commonInit() {
-        let view: UIView = Bundle.main.loadNibNamed("RacePickerViewCell", owner: self, options: nil)![0] as! UIView
+        let view: UIView = Bundle.main.loadNibNamed("RacePickerView", owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]

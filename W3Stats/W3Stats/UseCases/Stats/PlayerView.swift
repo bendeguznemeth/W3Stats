@@ -23,9 +23,9 @@ struct PlayerViewContent {
 
 class PlayerView: UIView {
 
-    @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var percentageView: UIView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
@@ -49,7 +49,9 @@ class PlayerView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.innerView.layer.cornerRadius = 15
+        self.percentageView.layer.cornerRadius = 12.5
+        
+        self.backgroundColor = .clear
     }
     
     @IBAction func changePlayerTapped(_ sender: UIButton) {

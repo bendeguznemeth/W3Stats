@@ -24,7 +24,7 @@ class AddPlayerView: UIView {
         }
     }
     
-    @IBOutlet weak var racePickerView: UIPickerView!
+    @IBOutlet weak var racePicker: UIPickerView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
@@ -48,12 +48,12 @@ class AddPlayerView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        self.racePickerView.dataSource = self
-        self.racePickerView.delegate = self
+        self.racePicker.dataSource = self
+        self.racePicker.delegate = self
         
         self.nameTextField.delegate = self
         
-        self.racePickerView.selectRow(1, inComponent: 0, animated: false)
+        self.racePicker.selectRow(1, inComponent: 0, animated: false)
         
         self.clipsToBounds = true
         self.layer.cornerRadius = 30
@@ -105,14 +105,21 @@ extension AddPlayerView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let racePickerViewCell = RacePickerViewCell()
+        var racePickerView: RacePickerView
+        
+        if let reusedView = view as? RacePickerView {
+            racePickerView = reusedView
+        } else {
+            racePickerView = RacePickerView()
+        }
+        
         let raceImageName = Race.allRaces[row].rawValue
         let raceName = Race.allRaces[row].displayableValue()
         let cellContent = RacePickerViewCellContent.init(raceImageName: raceImageName, raceName: raceName)
         
-        racePickerViewCell.displayContent(cellContent)
+        racePickerView.displayContent(cellContent)
         
-        return racePickerViewCell
+        return racePickerView
     }
 }
 
