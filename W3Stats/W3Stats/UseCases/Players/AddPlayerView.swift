@@ -62,6 +62,8 @@ class AddPlayerView: UIView {
         self.nameTextField.layer.cornerRadius = 20
         self.nameTextField.layer.borderWidth = 0.25
         self.nameTextField.layer.borderColor = UIColor.lightGray.cgColor
+        
+        self.saveButton.setupWithFont(.w3Stats, withSize: .normal, withColor: .white)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {

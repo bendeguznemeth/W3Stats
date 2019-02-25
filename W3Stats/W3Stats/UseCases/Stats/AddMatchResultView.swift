@@ -17,6 +17,7 @@ class AddMatchResultView: UIView {
     @IBOutlet weak var racePicker: UIPickerView!
     @IBOutlet weak var winButton: RoundedButton!
     @IBOutlet weak var loseButton: RoundedButton!
+    @IBOutlet weak var saveButton: RoundedButton!
     
     private var matchResult = MatchResult()
     
@@ -46,6 +47,10 @@ class AddMatchResultView: UIView {
         self.clipsToBounds = true
         self.layer.cornerRadius = 30
         self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        self.winButton.setupWithFont(.w3Stats, withSize: .normal, withColor: .white)
+        self.loseButton.setupWithFont(.w3Stats, withSize: .normal, withColor: .white)
+        self.saveButton.setupWithFont(.w3Stats, withSize: .normal, withColor: .white)
     }
     
     @IBAction func tapOnWin(_ sender: RoundedButton) {

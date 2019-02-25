@@ -33,6 +33,8 @@ class RacePickerView: UIView {
         self.addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        self.raceLabel.setupWithFont(.w3Stats, withSize: .normal, withColor: .black)
     }
     
     func displayContent(_ content: RacePickerViewCellContent) {

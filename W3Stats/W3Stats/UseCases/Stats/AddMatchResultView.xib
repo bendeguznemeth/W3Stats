@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="loseButton" destination="tXb-iE-Zyg" id="vRq-q5-u3c"/>
                 <outlet property="racePicker" destination="DPr-QS-o7A" id="AXB-hE-mMA"/>
+                <outlet property="saveButton" destination="hUG-QX-gXe" id="qEK-Iu-wxD"/>
                 <outlet property="winButton" destination="Rud-Yh-yZz" id="JWa-7Q-hUG"/>
             </connections>
         </placeholder>

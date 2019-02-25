@@ -27,8 +27,11 @@ class PlayerView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var percentageView: UIView!
     @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var staticTotalLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var staticWinsLabel: UILabel!
     @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var staticLossesLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     
     var delegate: PlayerViewDelegate?
@@ -52,6 +55,15 @@ class PlayerView: UIView {
         self.percentageView.layer.cornerRadius = 12.5
         
         self.backgroundColor = .clear
+        
+        self.nameLabel.setupWithFont(.w3StatsBold, withSize: .small, withColor: .white)
+        self.percentageLabel.setupWithFont(.w3Stats, withSize: .small, withColor: .black)
+        self.staticTotalLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.totalLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
+        self.staticWinsLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.winsLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
+        self.staticLossesLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.lossesLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
     }
     
     @IBAction func changePlayerTapped(_ sender: UIButton) {

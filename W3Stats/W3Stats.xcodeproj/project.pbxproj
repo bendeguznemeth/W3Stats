@@ -18,6 +18,10 @@
 		ED1F0ADD221C2A180051B14D /* StatsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0ADC221C2A180051B14D /* StatsUtil.swift */; };
 		ED1F0AE3221ECE170051B14D /* RacePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1F0AE2221ECE170051B14D /* RacePickerView.xib */; };
 		ED1F0AE5221ECE540051B14D /* RacePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AE4221ECE540051B14D /* RacePickerView.swift */; };
+		ED1F0AEA2223EB080051B14D /* UIFont+W3Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AE92223EB080051B14D /* UIFont+W3Stats.swift */; };
+		ED1F0AEC2223EB3F0051B14D /* UILabel+W3Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AEB2223EB3F0051B14D /* UILabel+W3Stats.swift */; };
+		ED1F0AEE2223EBC90051B14D /* UIColor+W3Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AED2223EBC90051B14D /* UIColor+W3Stats.swift */; };
+		ED1F0AF02223EC440051B14D /* UIButton+W3Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1F0AEF2223EC440051B14D /* UIButton+W3Stats.swift */; };
 		EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */; };
 		EDE6DCCF220C5E8E00347D76 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */; };
 		EDE6DCD2220C5E8E00347D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE6DCD0220C5E8E00347D76 /* Main.storyboard */; };
@@ -54,6 +58,10 @@
 		ED1F0ADC221C2A180051B14D /* StatsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUtil.swift; sourceTree = "<group>"; };
 		ED1F0AE2221ECE170051B14D /* RacePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacePickerView.xib; sourceTree = "<group>"; };
 		ED1F0AE4221ECE540051B14D /* RacePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePickerView.swift; sourceTree = "<group>"; };
+		ED1F0AE92223EB080051B14D /* UIFont+W3Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+W3Stats.swift"; sourceTree = "<group>"; };
+		ED1F0AEB2223EB3F0051B14D /* UILabel+W3Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+W3Stats.swift"; sourceTree = "<group>"; };
+		ED1F0AED2223EBC90051B14D /* UIColor+W3Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+W3Stats.swift"; sourceTree = "<group>"; };
+		ED1F0AEF2223EC440051B14D /* UIButton+W3Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+W3Stats.swift"; sourceTree = "<group>"; };
 		EDE6DCC9220C5E8E00347D76 /* W3Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = W3Stats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE6DCCC220C5E8E00347D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE6DCCE220C5E8E00347D76 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,17 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		ED1F0AE82223D0AD0051B14D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED1F0AEB2223EB3F0051B14D /* UILabel+W3Stats.swift */,
+				ED1F0AEF2223EC440051B14D /* UIButton+W3Stats.swift */,
+				ED1F0AE92223EB080051B14D /* UIFont+W3Stats.swift */,
+				ED1F0AED2223EBC90051B14D /* UIColor+W3Stats.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		EDE6DCC0220C5E8E00347D76 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +187,7 @@
 			children = (
 				3D33D8C7221BE559000E26E8 /* Manager */,
 				ED1F0ADE221C2A1D0051B14D /* Util */,
+				ED1F0AE82223D0AD0051B14D /* Extension */,
 				EDE6DCF8220DA06000347D76 /* UseCases */,
 				EDE6DCE7220D89A800347D76 /* BO */,
 				ED1F0ACE221AACBD0051B14D /* DAL */,
@@ -367,13 +387,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED1F0AD4221AAD380051B14D /* PlayerObject.swift in Sources */,
+				ED1F0AEC2223EB3F0051B14D /* UILabel+W3Stats.swift in Sources */,
 				EDE6DCE1220D603800347D76 /* Player.swift in Sources */,
 				EDF87CCC221450AC003FC83F /* AddPlayerView.swift in Sources */,
 				EDE6DCE3220D607F00347D76 /* Stats.swift in Sources */,
 				EDE6DCEF220D9B2500347D76 /* PlayerCell.swift in Sources */,
 				ED1F0AC7221AA07B0051B14D /* MatchResult.swift in Sources */,
 				ED1F0AD7221AAEC00051B14D /* RealmDataProvider.swift in Sources */,
+				ED1F0AEA2223EB080051B14D /* UIFont+W3Stats.swift in Sources */,
 				EDE6DCF7220D9E4100347D76 /* PlayerView.swift in Sources */,
+				ED1F0AEE2223EBC90051B14D /* UIColor+W3Stats.swift in Sources */,
 				ED1F0AD9221AAED30051B14D /* RealmDataParser.swift in Sources */,
 				EDE6DCF3220D9D0800347D76 /* RoundedButton.swift in Sources */,
 				EDE6DCF5220D9E0900347D76 /* VersusView.swift in Sources */,
@@ -385,6 +408,7 @@
 				EDE6DCF1220D9B9B00347D76 /* PlayersViewController.swift in Sources */,
 				EDE6DCDF220C7D4A00347D76 /* Race.swift in Sources */,
 				ED1F0AD3221AAD380051B14D /* DescObject.swift in Sources */,
+				ED1F0AF02223EC440051B14D /* UIButton+W3Stats.swift in Sources */,
 				EDE6DCCD220C5E8E00347D76 /* AppDelegate.swift in Sources */,
 				3D33D8C9221BE564000E26E8 /* ObjectContainer.swift in Sources */,
 				EDF87CC62212D8BC003FC83F /* AddMatchResultView.swift in Sources */,

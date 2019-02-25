@@ -17,6 +17,9 @@
                 <outlet property="percentageLabel" destination="V9h-3H-jqf" id="NPT-AQ-ISu"/>
                 <outlet property="percentageView" destination="wbD-kg-2vc" id="BeG-sX-muE"/>
                 <outlet property="playerImageView" destination="kJ2-ao-DUg" id="ja1-Kg-Tcw"/>
+                <outlet property="staticLossesLabel" destination="eYQ-6E-gWB" id="NZR-rY-gLU"/>
+                <outlet property="staticTotalLabel" destination="IY0-jy-5gU" id="fb3-48-D8R"/>
+                <outlet property="staticWinsLabel" destination="Bug-sf-vhe" id="zMB-Gl-BHP"/>
                 <outlet property="totalLabel" destination="sCT-ew-77d" id="LrA-HU-rSj"/>
                 <outlet property="winsLabel" destination="wyo-kj-mhr" id="KOb-lP-m4r"/>
             </connections>
@@ -100,15 +103,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGS-Co-1MX" userLabel="Wins View">
                             <rect key="frame" x="125" y="0.0" width="125" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-kj-mhr" userLabel="Wins Label">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="Loh-KC-OeZ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <color key="textColor" red="1" green="0.94117647059999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bug-sf-vhe" userLabel="Static Wins Label">
                                     <rect key="frame" x="0.0" y="25" width="125" height="15"/>
                                     <constraints>
@@ -116,6 +110,15 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-kj-mhr" userLabel="Wins Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="Loh-KC-OeZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="1" green="0.94117647059999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -132,15 +135,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lm-ga-D3g" userLabel="Losses View">
                             <rect key="frame" x="250" y="0.0" width="125" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI0-tf-7Pu" userLabel="Losses Label">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="fB6-uH-H2X"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <color key="textColor" red="1" green="0.94117647059999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-6E-gWB" userLabel="Static Losses Label">
                                     <rect key="frame" x="0.0" y="25" width="125" height="15"/>
                                     <constraints>
@@ -148,6 +142,15 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI0-tf-7Pu" userLabel="Losses Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="fB6-uH-H2X"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="1" green="0.94117647059999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

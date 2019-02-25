@@ -24,6 +24,7 @@ class PlayerCell: UITableViewCell {
         self.innerView.layer.cornerRadius = 10
         self.selectionStyle = .none
         self.backgroundColor = .clear
+        self.nameLabel.setupWithFont(.w3Stats, withSize: .normal, withColor: .white)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
