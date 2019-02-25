@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="220" id="X1h-Jh-TYB"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njv-oo-gMv">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njv-oo-gMv" userLabel="Versus Scroll View">
                                 <rect key="frame" x="0.0" y="264" width="375" height="956"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8Cg-Ge-7uL">
@@ -149,6 +149,7 @@
                         <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
                         <outlet property="addMatchResultViewHeightConstraint" destination="oZj-CT-cLQ" id="PAM-3q-iNe"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
+                        <outlet property="versusScrollView" destination="njv-oo-gMv" id="4oh-mB-Gax"/>
                         <outlet property="visualEffectView" destination="XVs-lt-pqz" id="hL9-am-8wt"/>
                         <outlet property="vsElfView" destination="IaS-RB-ydZ" id="Nub-B5-5q2"/>
                         <outlet property="vsHumanView" destination="uNa-cp-a1D" id="EXN-jm-qxq"/>

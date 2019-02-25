@@ -11,6 +11,7 @@ import UIKit
 class StatsViewController: UIViewController {
     
     @IBOutlet weak var playerView: PlayerView!
+    @IBOutlet weak var versusScrollView: UIScrollView!
     @IBOutlet weak var vsHumanView: VersusView!
     @IBOutlet weak var vsElfView: VersusView!
     @IBOutlet weak var vsOrcView: VersusView!
@@ -28,6 +29,8 @@ class StatsViewController: UIViewController {
         
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
+        
+        self.versusScrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 50, right: 0)
         
         self.presentPlayersVCWhenNoPlayerAvailable()
         
@@ -76,7 +79,7 @@ class StatsViewController: UIViewController {
         let playerStat = StatsUtil.calculateStat(wins: wins, losses: losses)
         let playerViewContent = PlayerViewContent.init(playerImageName: player.race.rawValue,
                                                        name: player.name,
-                                                       percentage: "\(playerStat.percentage) %",
+                                                       percentage: "\(playerStat.percentage)%",
             total: "\(playerStat.total)",
             wins: "\(playerStat.wins)",
             losses: "\(playerStat.losses)")
@@ -85,7 +88,7 @@ class StatsViewController: UIViewController {
     
     private func getVersusViewContent(from stat: Stat, for race: Race) -> VersusViewContent {
         return VersusViewContent.init(raceImageName: race.rawValue,
-                                      percentage: "\(stat.percentage) %",
+                                      percentage: "\(stat.percentage)%",
             total: "\(stat.total)",
             wins: "\(stat.wins)",
             losses: "\(stat.losses)")

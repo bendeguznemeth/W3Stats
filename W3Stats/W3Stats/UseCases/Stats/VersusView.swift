@@ -19,11 +19,11 @@ struct VersusViewContent {
 class VersusView: UIView {
 
     @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var raceImageView: UIImageView!
-    @IBOutlet weak var percentageLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var winsLabel: UILabel!
-    @IBOutlet weak var lossesLabel: UILabel!
+//    @IBOutlet weak var raceImageView: UIImageView!
+//    @IBOutlet weak var percentageLabel: UILabel!
+//    @IBOutlet weak var totalLabel: UILabel!
+//    @IBOutlet weak var winsLabel: UILabel!
+//    @IBOutlet weak var lossesLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,13 +47,13 @@ class VersusView: UIView {
     }
 
     func displayContent(_ content: VersusViewContent) {
-        if let image = UIImage(named: content.raceImageName) {
-            self.raceImageView.image = image
-        }
-        
-        self.percentageLabel.text = content.percentage
-        self.totalLabel.text = content.total
-        self.winsLabel.text = content.wins
-        self.lossesLabel.text = content.losses
+//        if let image = UIImage(named: content.raceImageName) {
+//            self.raceImageView.image = image
+//        }
+//        
+//        self.percentageLabel.text = content.percentage
+//        self.totalLabel.text = content.total
+//        self.winsLabel.text = content.wins
+//        self.lossesLabel.text = content.losses
     }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VersusHeaderView" customModule="W3Stats" customModuleProvider="target">
+            <connections>
+                <outlet property="percentageLabel" destination="frA-v2-cTy" id="K66-t3-NUY"/>
+                <outlet property="percentageView" destination="jbj-Jn-SBX" id="zcE-8D-Cg7"/>
+                <outlet property="raceImageView" destination="ofV-0O-1Yg" id="fzC-D8-hNo"/>
+                <outlet property="vsLabel" destination="Xsp-g0-yPB" id="qlo-fr-Ujt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="85"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbj-Jn-SBX" userLabel="Percentage View">
+                    <rect key="frame" x="0.0" y="30" width="200" height="25"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-g0-yPB" userLabel="vs Label">
+                            <rect key="frame" x="12" y="0.0" width="40" height="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frA-v2-cTy" userLabel="Percentage Label">
+                            <rect key="frame" x="148" y="0.0" width="40" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Ku1-w6-PuU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Xsp-g0-yPB" firstAttribute="width" secondItem="frA-v2-cTy" secondAttribute="width" id="6Ne-sY-u5U"/>
+                        <constraint firstItem="Xsp-g0-yPB" firstAttribute="leading" secondItem="jbj-Jn-SBX" secondAttribute="leading" constant="12" id="8a0-HM-Vxn"/>
+                        <constraint firstAttribute="height" constant="25" id="NjZ-c5-l92"/>
+                        <constraint firstAttribute="bottom" secondItem="Xsp-g0-yPB" secondAttribute="bottom" id="O4v-yr-t7h"/>
+                        <constraint firstItem="frA-v2-cTy" firstAttribute="top" secondItem="jbj-Jn-SBX" secondAttribute="top" id="hbA-n5-DqO"/>
+                        <constraint firstAttribute="bottom" secondItem="frA-v2-cTy" secondAttribute="bottom" id="ouJ-3A-hxC"/>
+                        <constraint firstItem="Xsp-g0-yPB" firstAttribute="top" secondItem="jbj-Jn-SBX" secondAttribute="top" id="tSO-EM-I2w"/>
+                        <constraint firstAttribute="trailing" secondItem="frA-v2-cTy" secondAttribute="trailing" constant="12" id="zSQ-Az-IeX"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-0O-1Yg" userLabel="Race Image View">
+                    <rect key="frame" x="57.5" y="0.0" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ofV-0O-1Yg" secondAttribute="height" multiplier="1:1" id="jG0-bq-cz8"/>
+                        <constraint firstAttribute="width" constant="85" id="w1k-vo-grp"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ofV-0O-1Yg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MNw-dO-Um1"/>
+                <constraint firstItem="jbj-Jn-SBX" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RO3-OY-SeF"/>
+                <constraint firstItem="jbj-Jn-SBX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TEO-y6-Hwy"/>
+                <constraint firstItem="jbj-Jn-SBX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ukh-Pw-xMD"/>
+                <constraint firstItem="ofV-0O-1Yg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lLR-hX-p0g"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-1.6000000000000001" y="-108.39580209895054"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default_player" width="54.545455932617188" height="54.545455932617188"/>
+    </resources>
+</document>
