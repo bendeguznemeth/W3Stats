@@ -16,7 +16,7 @@ class PlayersViewController: UIViewController {
     
     @IBOutlet weak var playersTableView: UITableView!
     @IBOutlet weak var addPlayerView: AddPlayerView!
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var backgroundBlurView: UIView!
     @IBOutlet weak var addPlayerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPlayerViewBottomConstraint: NSLayoutConstraint!
     
@@ -88,13 +88,13 @@ class PlayersViewController: UIViewController {
     }
     
     private func blurBackground() {
-        self.visualEffectView.alpha = 0
-        self.visualEffectView.isHidden = false
+        self.backgroundBlurView.alpha = 0
+        self.backgroundBlurView.isHidden = false
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        self.visualEffectView.alpha = 1
+                        self.backgroundBlurView.alpha = 0.7
                         self.view.layoutIfNeeded()
         })
     }
@@ -104,11 +104,11 @@ class PlayersViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        self.visualEffectView.alpha = 0
+                        self.backgroundBlurView.alpha = 0
                         self.view.layoutIfNeeded()
         },
                        completion: { _ in
-                        self.visualEffectView.isHidden = true
+                        self.backgroundBlurView.isHidden = true
         })
     }
     

@@ -91,18 +91,14 @@
                                     <action selector="addMatchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDo-aJ-JdD"/>
                                 </connections>
                             </button>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-lt-pqz">
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgt-4e-RaH" userLabel="Background Blur View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RTd-Lw-TuA" userLabel="View Of Visual Effect View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <gestureRecognizers/>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="PRK-gU-7f7" appends="YES" id="AYx-fS-qK6"/>
-                                    </connections>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PRK-gU-7f7" appends="YES" id="LpG-9o-6Z4"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-gX-3DF" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1000" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,7 +111,6 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LcA-Yv-COn" secondAttribute="bottom" constant="20" id="1A6-7U-Jz2"/>
-                            <constraint firstItem="XVs-lt-pqz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3dy-09-KOM"/>
                             <constraint firstItem="Nhw-7L-0k7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="3lR-Wn-Yeh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="njv-oo-gMv" secondAttribute="trailing" id="50W-EL-f04"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyO-gX-3DF" secondAttribute="trailing" id="9GA-yu-BAn"/>
@@ -126,16 +121,17 @@
                             <constraint firstItem="9nT-7K-81x" firstAttribute="bottom" secondItem="YT7-gu-QyV" secondAttribute="bottom" id="RxE-ZS-TAc"/>
                             <constraint firstItem="dyO-gX-3DF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SQO-U0-S4m"/>
                             <constraint firstItem="YT7-gu-QyV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TZD-at-wXe"/>
-                            <constraint firstAttribute="bottom" secondItem="XVs-lt-pqz" secondAttribute="bottom" id="Z1i-vG-8JB"/>
                             <constraint firstItem="Nhw-7L-0k7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZGq-TK-exU"/>
+                            <constraint firstItem="fgt-4e-RaH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a3L-KX-Y4W"/>
+                            <constraint firstItem="fgt-4e-RaH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b9W-er-zkR"/>
                             <constraint firstAttribute="trailing" secondItem="YT7-gu-QyV" secondAttribute="trailing" id="cqZ-qp-13S"/>
                             <constraint firstAttribute="bottom" secondItem="dyO-gX-3DF" secondAttribute="bottom" id="ePQ-6k-SzO"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRK-V4-7VE"/>
                             <constraint firstItem="9nT-7K-81x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fgM-aS-dYd"/>
                             <constraint firstItem="9nT-7K-81x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hPG-1q-vkd"/>
-                            <constraint firstItem="XVs-lt-pqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l7I-8c-GMB"/>
+                            <constraint firstAttribute="trailing" secondItem="fgt-4e-RaH" secondAttribute="trailing" id="hn2-2W-l88"/>
                             <constraint firstItem="Nhw-7L-0k7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mec-Wd-NwA"/>
-                            <constraint firstAttribute="trailing" secondItem="XVs-lt-pqz" secondAttribute="trailing" id="ovv-aB-BGW"/>
+                            <constraint firstAttribute="bottom" secondItem="fgt-4e-RaH" secondAttribute="bottom" id="qAE-wq-w3O"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="top" secondItem="9nT-7K-81x" secondAttribute="bottom" id="tq4-5c-BSR"/>
                             <constraint firstAttribute="bottom" secondItem="Nhw-7L-0k7" secondAttribute="bottom" id="uXj-DQ-7nW"/>
                             <constraint firstAttribute="trailing" secondItem="LcA-Yv-COn" secondAttribute="trailing" constant="20" id="xsE-6K-Y9R"/>
@@ -148,9 +144,9 @@
                     <connections>
                         <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
                         <outlet property="addMatchResultViewHeightConstraint" destination="oZj-CT-cLQ" id="PAM-3q-iNe"/>
+                        <outlet property="backgroundBlurView" destination="fgt-4e-RaH" id="LHn-AC-jHl"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
                         <outlet property="versusScrollView" destination="njv-oo-gMv" id="4oh-mB-Gax"/>
-                        <outlet property="visualEffectView" destination="XVs-lt-pqz" id="hL9-am-8wt"/>
                         <outlet property="vsElfView" destination="IaS-RB-ydZ" id="Nub-B5-5q2"/>
                         <outlet property="vsHumanView" destination="uNa-cp-a1D" id="EXN-jm-qxq"/>
                         <outlet property="vsOrcView" destination="QAV-Pa-5lK" id="tBV-AR-e2g"/>
@@ -195,19 +191,14 @@
                                     <action selector="addPlayerButtonTapped:" destination="eM0-Il-RzF" eventType="touchUpInside" id="Agb-sY-dfU"/>
                                 </connections>
                             </button>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vh3-9F-31m">
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcx-Zg-NpT" userLabel="Background Blur View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FY1-7P-bT4" userLabel="View Of Visual Effect View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <gestureRecognizers/>
-                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
-                                <blurEffect style="light"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="qOx-Bf-EP0" appends="YES" id="Jkc-Oa-ORv"/>
+                                    <outletCollection property="gestureRecognizers" destination="qOx-Bf-EP0" appends="YES" id="MeC-Pa-rZI"/>
                                 </connections>
-                            </visualEffectView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-2L-PP6" customClass="AddPlayerView" customModule="W3Stats" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="812" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,21 +211,21 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dlD-Xl-bA7" secondAttribute="trailing" id="6am-9O-HsV"/>
                             <constraint firstItem="GGx-2L-PP6" firstAttribute="leading" secondItem="6RY-Zx-HyA" secondAttribute="leading" id="7iN-lR-gLv"/>
-                            <constraint firstAttribute="bottom" secondItem="vh3-9F-31m" secondAttribute="bottom" id="EBZ-om-QeT"/>
-                            <constraint firstItem="vh3-9F-31m" firstAttribute="leading" secondItem="hib-C5-HLh" secondAttribute="leading" id="I6e-2L-2SU"/>
+                            <constraint firstItem="Mcx-Zg-NpT" firstAttribute="top" secondItem="hib-C5-HLh" secondAttribute="top" id="8wB-dP-0Xu"/>
+                            <constraint firstAttribute="bottom" secondItem="Mcx-Zg-NpT" secondAttribute="bottom" id="DZb-MC-guw"/>
                             <constraint firstItem="dlD-Xl-bA7" firstAttribute="leading" secondItem="hib-C5-HLh" secondAttribute="leading" id="JIt-v3-xBy"/>
                             <constraint firstAttribute="bottom" secondItem="dlD-Xl-bA7" secondAttribute="bottom" id="LJK-ED-quQ"/>
                             <constraint firstItem="ady-Q4-0YX" firstAttribute="top" secondItem="6RY-Zx-HyA" secondAttribute="top" id="MAj-3O-uQc"/>
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="trailing" secondItem="ady-Q4-0YX" secondAttribute="trailing" id="MO6-rZ-QQ9"/>
                             <constraint firstAttribute="bottom" secondItem="Tru-2V-aix" secondAttribute="bottom" constant="20" id="OEP-Yg-vMT"/>
-                            <constraint firstItem="vh3-9F-31m" firstAttribute="top" secondItem="hib-C5-HLh" secondAttribute="top" id="WAO-O1-Yb6"/>
                             <constraint firstItem="ady-Q4-0YX" firstAttribute="leading" secondItem="6RY-Zx-HyA" secondAttribute="leading" id="Xys-UR-ogS"/>
+                            <constraint firstAttribute="trailing" secondItem="Mcx-Zg-NpT" secondAttribute="trailing" id="a15-J0-K1s"/>
                             <constraint firstAttribute="bottom" secondItem="GGx-2L-PP6" secondAttribute="bottom" id="gt7-NE-DJp"/>
+                            <constraint firstItem="Mcx-Zg-NpT" firstAttribute="leading" secondItem="hib-C5-HLh" secondAttribute="leading" id="ieG-7g-Ifl"/>
                             <constraint firstAttribute="bottom" secondItem="ady-Q4-0YX" secondAttribute="bottom" id="ned-Uw-VWS"/>
                             <constraint firstItem="dlD-Xl-bA7" firstAttribute="top" secondItem="hib-C5-HLh" secondAttribute="top" id="rky-OU-5rv"/>
                             <constraint firstAttribute="trailing" secondItem="Tru-2V-aix" secondAttribute="trailing" constant="20" id="t6K-tv-Klo"/>
                             <constraint firstItem="6RY-Zx-HyA" firstAttribute="trailing" secondItem="GGx-2L-PP6" secondAttribute="trailing" id="vyG-Gl-1vS"/>
-                            <constraint firstItem="vh3-9F-31m" firstAttribute="trailing" secondItem="hib-C5-HLh" secondAttribute="trailing" id="wmG-9E-28v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6RY-Zx-HyA"/>
                     </view>
@@ -242,8 +233,8 @@
                         <outlet property="addPlayerView" destination="GGx-2L-PP6" id="Rtq-R9-TUz"/>
                         <outlet property="addPlayerViewBottomConstraint" destination="gt7-NE-DJp" id="tfb-Gm-yJ7"/>
                         <outlet property="addPlayerViewHeightConstraint" destination="sTq-Jb-mPG" id="zUY-my-Pyy"/>
+                        <outlet property="backgroundBlurView" destination="Mcx-Zg-NpT" id="GfB-ks-dhQ"/>
                         <outlet property="playersTableView" destination="ady-Q4-0YX" id="zsW-mQ-xlt"/>
-                        <outlet property="visualEffectView" destination="vh3-9F-31m" id="URP-oL-kLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZ3-LJ-S13" userLabel="First Responder" sceneMemberID="firstResponder"/>

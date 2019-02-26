@@ -17,7 +17,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var vsOrcView: VersusView!
     @IBOutlet weak var vsUndeadView: VersusView!
     @IBOutlet weak var addMatchResultView: AddMatchResultView!
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var backgroundBlurView: UIView!
     @IBOutlet weak var addMatchResultViewHeightConstraint: NSLayoutConstraint!
     
     var player: Player?
@@ -121,13 +121,13 @@ class StatsViewController: UIViewController {
     }
     
     private func blurBackground() {
-        self.visualEffectView.alpha = 0
-        self.visualEffectView.isHidden = false
+        self.backgroundBlurView.alpha = 0
+        self.backgroundBlurView.isHidden = false
         self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        self.visualEffectView.alpha = 1
+                        self.backgroundBlurView.alpha = 0.7
                         self.view.layoutIfNeeded()
         })
     }
@@ -137,11 +137,11 @@ class StatsViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3,
                        animations: {
-                        self.visualEffectView.alpha = 0
+                        self.backgroundBlurView.alpha = 0
                         self.view.layoutIfNeeded()
         },
                        completion: { _ in
-                        self.visualEffectView.isHidden = true
+                        self.backgroundBlurView.isHidden = true
         })
     }
     
