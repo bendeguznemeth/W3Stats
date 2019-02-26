@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddPlayerDelegate {
+protocol AddPlayerDelegate: class {
     func addNewPlayer(_ playerResult: AddPlayerView.NewPlayer)
 }
 
@@ -30,7 +30,7 @@ class AddPlayerView: UIView {
     
     private var playerResult = NewPlayer()
     
-    var delegate: AddPlayerDelegate?
+    weak var delegate: AddPlayerDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

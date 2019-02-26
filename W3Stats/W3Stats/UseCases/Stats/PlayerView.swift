@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PlayerViewDelegate {
+protocol PlayerViewDelegate: class {
     func presentPlayersViewController()
 }
 
@@ -34,7 +34,7 @@ class PlayerView: UIView {
     @IBOutlet weak var staticLossesLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     
-    var delegate: PlayerViewDelegate?
+    weak var delegate: PlayerViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

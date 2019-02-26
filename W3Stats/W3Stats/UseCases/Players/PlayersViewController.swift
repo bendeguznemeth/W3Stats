@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PlayersViewControllerDelegate {
+protocol PlayersViewControllerDelegate: class {
     func updateStatsForPlayer(_ playerName: String)
 }
 
@@ -22,7 +22,7 @@ class PlayersViewController: UIViewController {
     
     var players = [Player]()
     
-    var delegate: PlayersViewControllerDelegate?
+    weak var delegate: PlayersViewControllerDelegate?
     
     private let provider: DataProviding = ObjectContainer.sharedInstance.dataProvider
     

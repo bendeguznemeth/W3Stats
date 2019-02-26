@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MatchResultDelegate {
+protocol MatchResultDelegate: class {
     func addNewMatchResult(_ matchResult: MatchResult)
 }
 
@@ -21,7 +21,7 @@ class AddMatchResultView: UIView {
     
     private var matchResult = MatchResult()
     
-    var delegate: MatchResultDelegate?
+    weak var delegate: MatchResultDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
