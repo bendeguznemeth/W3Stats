@@ -9,11 +9,11 @@
 import RealmSwift
 
 protocol DataProviding {
-    func savePlayer(player: Player, onFailed: ()->())
-    func updatePlayer(player: Player, onFailed: ()->())
+    func savePlayer(player: Player, onFailed: () -> Void)
+    func updatePlayer(player: Player, onFailed: () -> Void)
     func loadPlayers() -> [Player]
     func loadPlayer(name: String) -> Player?
-    func deletePlayer(name: String, onFailed: ()->())
+    func deletePlayer(name: String, onFailed: () -> Void)
 }
 
 class RealmDataProvider: DataProviding {
@@ -26,7 +26,7 @@ class RealmDataProvider: DataProviding {
     
     // MARK: - Save
     
-    func savePlayer(player: Player, onFailed: ()->()) {
+    func savePlayer(player: Player, onFailed: () -> Void) {
         let playerObject = RealmDataParser.playerObjectFromPlayer(player)
         
         do {
@@ -40,7 +40,7 @@ class RealmDataProvider: DataProviding {
     
     // MARK: - Update
     
-    func updatePlayer(player: Player, onFailed: ()->()) {
+    func updatePlayer(player: Player, onFailed: () -> Void) {
         let playerObject = RealmDataParser.playerObjectFromPlayer(player)
         
         do {
@@ -70,7 +70,7 @@ class RealmDataProvider: DataProviding {
     
     // MARK: - Delete
     
-    func deletePlayer(name: String, onFailed: ()->()) {
+    func deletePlayer(name: String, onFailed: () -> Void) {
         guard let playerObject = self.realm.object(ofType: PlayerObject.self, forPrimaryKey: name) else {
             onFailed()
             return

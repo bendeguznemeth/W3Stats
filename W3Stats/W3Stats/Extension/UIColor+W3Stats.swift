@@ -17,14 +17,14 @@ enum W3StatsTextColor {
     case black
     case yellow
     
-    var value : UIColor {
+    var value: UIColor {
         switch self {
         case .white:
             return UIColor.white
         case .black:
             return UIColor.black
         case .yellow:
-            return UIColor(red:1.00, green:0.94, blue:0.44, alpha:1.0)
+            return UIColor(red: 1.00, green: 0.94, blue: 0.44, alpha: 1.0)
         }
     }
 }

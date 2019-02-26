@@ -80,9 +80,9 @@ class StatsViewController: UIViewController {
         let playerViewContent = PlayerViewContent.init(playerImageName: player.race.rawValue,
                                                        name: player.name,
                                                        percentage: "\(playerStat.percentage)%",
-            total: "\(playerStat.total)",
-            wins: "\(playerStat.wins)",
-            losses: "\(playerStat.losses)")
+                                                        total: "\(playerStat.total)",
+                                                        wins: "\(playerStat.wins)",
+                                                        losses: "\(playerStat.losses)")
         self.playerView.displayContent(playerViewContent)
     }
     

@@ -31,4 +31,3 @@ enum W3StatsFontSize: CGFloat {
     /// 24
     case large = 24
 }
-

@@ -130,6 +130,4 @@ extension AddPlayerView: UITextFieldDelegate {
         self.nameTextField.resignFirstResponder()
         return true
     }
-    
-    
 }

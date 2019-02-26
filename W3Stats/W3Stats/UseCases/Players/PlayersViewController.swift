@@ -41,7 +41,7 @@ class PlayersViewController: UIViewController {
         
         players = self.provider.loadPlayers()
         
-        if players.count == 0 {
+        if players.isEmpty {
             self.showAddPlayerView()
         }
     }
@@ -51,7 +51,7 @@ class PlayersViewController: UIViewController {
     }
     
     @IBAction func tappedOnBackground(_ sender: UITapGestureRecognizer) {
-        if players.count != 0 {
+        if !players.isEmpty {
             self.addPlayerView.nameTextField.resignFirstResponder()
             self.hideAddPlayerView()
         }
@@ -180,14 +180,14 @@ extension PlayersViewController: AddPlayerDelegate {
 }
 
 extension PlayersViewController {
-    func bindToKeyboard(){
+    func bindToKeyboard() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
     }
     
-    func unbindToKeyboard(){
+    func unbindToKeyboard() {
         NotificationCenter.default.removeObserver(self)
     }
     
