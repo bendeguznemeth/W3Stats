@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="StatsViewController" id="BYZ-38-t0r" customClass="StatsViewController" customModule="W3Stats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Nhw-7L-0k7" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YT7-gu-QyV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
@@ -33,37 +33,37 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njv-oo-gMv" userLabel="Versus Scroll View">
-                                <rect key="frame" x="0.0" y="264" width="375" height="956"/>
+                                <rect key="frame" x="0.0" y="264" width="375" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8Cg-Ge-7uL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="960"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="760"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNa-cp-a1D" userLabel="Versus Human View" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="Rr0-pS-i6g"/>
+                                                    <constraint firstAttribute="height" constant="190" id="Rr0-pS-i6g"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaS-RB-ydZ" userLabel="Versus Elf View" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="240" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="190" width="375" height="190"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="n6N-fM-bJM"/>
+                                                    <constraint firstAttribute="height" constant="190" id="n6N-fM-bJM"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-Pa-5lK" userLabel="Versus Orc View" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="480" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="380" width="375" height="190"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="pt8-Hb-9HM"/>
+                                                    <constraint firstAttribute="height" constant="190" id="pt8-Hb-9HM"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mC-aY-oQ6" userLabel="Versus Undead View" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="720" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="570" width="375" height="190"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="a1p-wt-bmD"/>
+                                                    <constraint firstAttribute="height" constant="190" id="a1p-wt-bmD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcA-Yv-COn" userLabel="Add Match Button" customClass="RoundedButton" customModule="W3Stats" customModuleProvider="target">
-                                <rect key="frame" x="295" y="1140" width="60" height="60"/>
+                                <rect key="frame" x="295" y="920" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LcA-Yv-COn" secondAttribute="height" multiplier="1:1" id="1aR-7N-GOT"/>
@@ -92,9 +92,9 @@
                                 </connections>
                             </button>
                             <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-lt-pqz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RTd-Lw-TuA" userLabel="View Of Visual Effect View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -104,7 +104,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-gX-3DF" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1220" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="1000" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="oZj-CT-cLQ"/>
@@ -144,7 +144,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ID2-6V-hoH"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1220"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
                         <outlet property="addMatchResultViewHeightConstraint" destination="oZj-CT-cLQ" id="PAM-3q-iNe"/>

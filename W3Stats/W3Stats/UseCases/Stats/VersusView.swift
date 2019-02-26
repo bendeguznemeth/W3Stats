@@ -9,8 +9,7 @@
 import UIKit
 
 struct VersusViewContent {
-    let raceImageName: String
-    let percentage: String
+    let versusHeaderViewContent: VersusHeaderViewContent
     let total: String
     let wins: String
     let losses: String
@@ -18,12 +17,14 @@ struct VersusViewContent {
 
 class VersusView: UIView {
 
+    @IBOutlet weak var versusHeaderView: VersusHeaderView!
     @IBOutlet weak var innerView: UIView!
-//    @IBOutlet weak var raceImageView: UIImageView!
-//    @IBOutlet weak var percentageLabel: UILabel!
-//    @IBOutlet weak var totalLabel: UILabel!
-//    @IBOutlet weak var winsLabel: UILabel!
-//    @IBOutlet weak var lossesLabel: UILabel!
+    @IBOutlet weak var staticTotalLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var staticWinsLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var staticLossesLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,16 +45,20 @@ class VersusView: UIView {
         self.backgroundColor = .clear
         
         self.innerView.layer.cornerRadius = 15
+        
+        self.staticTotalLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.totalLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
+        self.staticWinsLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.winsLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
+        self.staticLossesLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
+        self.lossesLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
     }
 
     func displayContent(_ content: VersusViewContent) {
-//        if let image = UIImage(named: content.raceImageName) {
-//            self.raceImageView.image = image
-//        }
-//        
-//        self.percentageLabel.text = content.percentage
-//        self.totalLabel.text = content.total
-//        self.winsLabel.text = content.wins
-//        self.lossesLabel.text = content.losses
+        self.versusHeaderView.displayContent(content.versusHeaderViewContent)
+        
+        self.totalLabel.text = content.total
+        self.winsLabel.text = content.wins
+        self.lossesLabel.text = content.losses
     }
 }

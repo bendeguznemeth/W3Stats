@@ -27,15 +27,15 @@
                     <rect key="frame" x="0.0" y="30" width="200" height="25"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-g0-yPB" userLabel="vs Label">
-                            <rect key="frame" x="12" y="0.0" width="40" height="25"/>
+                            <rect key="frame" x="12" y="0.0" width="50" height="25"/>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frA-v2-cTy" userLabel="Percentage Label">
-                            <rect key="frame" x="148" y="0.0" width="40" height="25"/>
+                            <rect key="frame" x="138" y="0.0" width="50" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="Ku1-w6-PuU"/>
+                                <constraint firstAttribute="width" constant="50" id="Ku1-w6-PuU"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>

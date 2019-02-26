@@ -30,7 +30,7 @@ class StatsViewController: UIViewController {
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
         
-        self.versusScrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 50, right: 0)
+        self.versusScrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 80, right: 0)
         
         self.presentPlayersVCWhenNoPlayerAvailable()
         
@@ -87,11 +87,11 @@ class StatsViewController: UIViewController {
     }
     
     private func getVersusViewContent(from stat: Stat, for race: Race) -> VersusViewContent {
-        return VersusViewContent.init(raceImageName: race.rawValue,
-                                      percentage: "\(stat.percentage)%",
-            total: "\(stat.total)",
-            wins: "\(stat.wins)",
-            losses: "\(stat.losses)")
+        let versusHeaderViewContent = VersusHeaderViewContent.init(raceImageName: race.rawValue, percentage: "\(stat.percentage)%")
+        return VersusViewContent.init(versusHeaderViewContent: versusHeaderViewContent,
+                                        total: "\(stat.total)",
+                                        wins: "\(stat.wins)",
+                                        losses: "\(stat.losses)")
     }
     
     private func showAddMatchResultView() {

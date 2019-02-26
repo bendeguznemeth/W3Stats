@@ -13,15 +13,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VersusView" customModule="W3Stats" customModuleProvider="target">
             <connections>
                 <outlet property="innerView" destination="efU-pY-Ffm" id="5sz-gq-9W5"/>
+                <outlet property="lossesLabel" destination="yNU-iO-ZDH" id="Czl-Eb-Mb2"/>
+                <outlet property="staticLossesLabel" destination="U8m-cQ-i0f" id="IHj-qj-x2b"/>
+                <outlet property="staticTotalLabel" destination="dUB-1d-rli" id="Fzm-fW-JDc"/>
+                <outlet property="staticWinsLabel" destination="DIr-Mp-DN4" id="4YC-2e-xzs"/>
+                <outlet property="totalLabel" destination="SeW-3C-A6Y" id="rCo-3W-ZaW"/>
+                <outlet property="versusHeaderView" destination="qoh-Y3-3Oj" id="Q8b-2t-b5z"/>
+                <outlet property="winsLabel" destination="bx4-zb-bUZ" id="z5t-f2-2qc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efU-pY-Ffm" userLabel="Inner View">
-                    <rect key="frame" x="15" y="67.5" width="345" height="172.5"/>
+                    <rect key="frame" x="15" y="67.5" width="345" height="122.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Dfl-Dt-2xf">
                             <rect key="frame" x="0.0" y="60" width="345" height="40"/>
