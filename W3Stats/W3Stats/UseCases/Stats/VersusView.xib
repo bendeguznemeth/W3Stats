@@ -87,6 +87,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="bx4-zb-bUZ" firstAttribute="top" secondItem="nyV-2b-2X2" secondAttribute="top" id="H8Z-H5-49r"/>
                                         <constraint firstAttribute="bottom" secondItem="DIr-Mp-DN4" secondAttribute="bottom" id="KA3-ba-nSd"/>
@@ -96,6 +97,9 @@
                                         <constraint firstItem="DIr-Mp-DN4" firstAttribute="leading" secondItem="nyV-2b-2X2" secondAttribute="leading" id="Z0o-c6-7Na"/>
                                         <constraint firstItem="DIr-Mp-DN4" firstAttribute="top" secondItem="bx4-zb-bUZ" secondAttribute="bottom" id="hlC-cn-Jqb"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="CtH-Yf-MVb" appends="YES" id="4Hg-vc-Epg"/>
+                                    </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NB-Ek-F33" userLabel="Losses View">
                                     <rect key="frame" x="230" y="0.0" width="115" height="40"/>
@@ -119,6 +123,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="U8m-cQ-i0f" firstAttribute="top" secondItem="yNU-iO-ZDH" secondAttribute="bottom" id="7jt-mC-tql"/>
                                         <constraint firstAttribute="trailing" secondItem="yNU-iO-ZDH" secondAttribute="trailing" id="B0d-c8-eIU"/>
@@ -128,6 +133,9 @@
                                         <constraint firstAttribute="trailing" secondItem="U8m-cQ-i0f" secondAttribute="trailing" id="wlx-yQ-Ivx"/>
                                         <constraint firstItem="U8m-cQ-i0f" firstAttribute="leading" secondItem="3NB-Ek-F33" secondAttribute="leading" id="xjc-Ef-tsR"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="E95-qS-LLT" appends="YES" id="4HA-3i-wUV"/>
+                                    </connections>
                                 </view>
                             </subviews>
                         </stackView>
@@ -161,5 +169,15 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="13.6" y="-31.484257871064472"/>
         </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CtH-Yf-MVb" userLabel="Wins Long Press Gesture Recognizer">
+            <connections>
+                <action selector="longPressOnWins:" destination="-1" id="zj4-8N-w05"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="E95-qS-LLT" userLabel="Losses Long Press Gesture Recognizer">
+            <connections>
+                <action selector="longPressOnLosses:" destination="-1" id="aUl-JS-YP1"/>
+            </connections>
+        </pongPressGestureRecognizer>
     </objects>
 </document>

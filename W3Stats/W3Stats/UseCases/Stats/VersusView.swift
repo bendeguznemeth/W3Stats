@@ -26,6 +26,8 @@ class VersusView: UIView {
     @IBOutlet weak var staticLossesLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     
+    var onLongPress: ((_ matchResult: MatchResult.ResultType) -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
@@ -53,7 +55,19 @@ class VersusView: UIView {
         self.staticLossesLabel.setupWithFont(.w3Stats, withSize: .tiny, withColor: .white)
         self.lossesLabel.setupWithFont(.w3Stats, withSize: .large, withColor: .yellow)
     }
-
+    
+    @IBAction func longPressOnWins(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            self.onLongPress?(.win)
+        }
+    }
+    
+    @IBAction func longPressOnLosses(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            self.onLongPress?(.lose)
+        }
+    }
+    
     func displayContent(_ content: VersusViewContent) {
         self.versusHeaderView.displayContent(content.versusHeaderViewContent)
         

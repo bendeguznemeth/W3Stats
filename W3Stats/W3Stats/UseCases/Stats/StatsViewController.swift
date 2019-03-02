@@ -30,6 +30,8 @@ class StatsViewController: UIViewController {
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
         
+        self.setupVersusViewLongPressClosures()
+        
         self.versusScrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 80, right: 0)
         
         self.presentPlayersVCWhenNoPlayerAvailable()
@@ -50,6 +52,133 @@ class StatsViewController: UIViewController {
             self.presentPlayersViewController()
             return
         }
+    }
+    
+    private func setupVersusViewLongPressClosures() {
+        self.vsHumanView.onLongPress = { [weak self] result in
+            self?.showEditAlertViewControllerForRace(.human, matchResult: result)
+        }
+        self.vsElfView.onLongPress = { [weak self] result in
+            self?.showEditAlertViewControllerForRace(.elf, matchResult: result)
+        }
+        self.vsOrcView.onLongPress = { [weak self] result in
+            self?.showEditAlertViewControllerForRace(.orc, matchResult: result)
+        }
+        self.vsUndeadView.onLongPress = { [weak self] result in
+            self?.showEditAlertViewControllerForRace(.undead, matchResult: result)
+        }
+    }
+    
+    private func showEditAlertViewControllerForRace(_ race: Race, matchResult: MatchResult.ResultType) {
+        let winString = self.getWinStringFrom(matchResult: matchResult)
+        
+        guard let currentValue = self.getCurrentValueFor(race: race, matchResult: matchResult) else {
+            return
+        }
+        
+        let editAlertController = UIAlertController(title: "\(race.displayableValue()) \(winString):", message: nil, preferredStyle: .alert)
+        
+        editAlertController.addTextField { (textField) in
+            textField.delegate = self
+            textField.keyboardType = .decimalPad
+            textField.text = String(currentValue)
+        }
+        
+        editAlertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        editAlertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_) in
+            guard let textField = editAlertController.textFields?.first, let text = textField.text, let newValue = Int(text) else {
+                return
+            }
+            
+            self.saveNewValue(newValue, forRace: race, matchResult: matchResult)
+        }))
+        
+        self.present(editAlertController, animated: true, completion: nil)
+    }
+    
+    private func getWinStringFrom(matchResult: MatchResult.ResultType) -> String {
+        var winString: String
+        
+        switch matchResult {
+        case .win:
+            winString = "wins"
+        case .lose:
+            winString = "losses"
+        }
+        
+        return winString
+    }
+    
+    private func getCurrentValueFor(race: Race, matchResult: MatchResult.ResultType) -> Int? {
+        guard let player = self.player else {
+            return nil
+        }
+        
+        var currentValue: Int
+        
+        switch matchResult {
+        case .win:
+            switch race {
+            case .human:
+                currentValue = player.stats.vsHuman.wins
+            case .elf:
+                currentValue = player.stats.vsElf.wins
+            case .orc:
+                currentValue = player.stats.vsOrc.wins
+            case .undead:
+                currentValue = player.stats.vsUndead.wins
+            }
+        case .lose:
+            switch race {
+            case .human:
+                currentValue = player.stats.vsHuman.losses
+            case .elf:
+                currentValue = player.stats.vsElf.losses
+            case .orc:
+                currentValue = player.stats.vsOrc.losses
+            case .undead:
+                currentValue = player.stats.vsUndead.losses
+            }
+        }
+        
+        return currentValue
+    }
+    
+    private func saveNewValue(_ newValue: Int, forRace race: Race, matchResult: MatchResult.ResultType) {
+        guard let player = self.player else {
+            return
+        }
+        
+        switch matchResult {
+        case .win:
+            switch race {
+            case .human:
+                player.stats.vsHuman.wins = newValue
+            case .elf:
+                player.stats.vsElf.wins = newValue
+            case .orc:
+                player.stats.vsOrc.wins = newValue
+            case .undead:
+                player.stats.vsUndead.wins = newValue
+            }
+        case .lose:
+            switch race {
+            case .human:
+                player.stats.vsHuman.losses = newValue
+            case .elf:
+                player.stats.vsElf.losses = newValue
+            case .orc:
+                player.stats.vsOrc.losses = newValue
+            case .undead:
+                player.stats.vsUndead.losses = newValue
+            }
+        }
+        
+        self.provider.updatePlayer(player: player) {
+            self.presentAlertWithMessage("Could not save new match result.")
+        }
+        
+        self.showStats()
     }
     
     private func showStats() {
@@ -211,5 +340,15 @@ extension StatsViewController: PlayersViewControllerDelegate {
     func updateStatsForPlayer(_ playerName: String) {
         self.player = self.provider.loadPlayer(name: playerName)
         self.showStats()
+    }
+}
+
+extension StatsViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let aSet = NSCharacterSet(charactersIn: "0123456789").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return string == numberFiltered
     }
 }
