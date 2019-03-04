@@ -54,7 +54,7 @@
                         <constraint firstAttribute="trailing" secondItem="frA-v2-cTy" secondAttribute="trailing" constant="12" id="zSQ-Az-IeX"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-0O-1Yg" userLabel="Race Image View">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-0O-1Yg" userLabel="Race Image View">
                     <rect key="frame" x="57.5" y="0.0" width="85" height="85"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ofV-0O-1Yg" secondAttribute="height" multiplier="1:1" id="jG0-bq-cz8"/>

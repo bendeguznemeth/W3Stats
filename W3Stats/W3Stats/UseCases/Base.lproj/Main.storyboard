@@ -99,6 +99,25 @@
                                     <outletCollection property="gestureRecognizers" destination="PRK-gU-7f7" appends="YES" id="LpG-9o-6Z4"/>
                                 </connections>
                             </view>
+                            <view hidden="YES" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYZ-YF-DBQ" userLabel="Checkmark View">
+                                <rect key="frame" x="112.66666666666669" y="425" width="150" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="rRL-F6-BWy" userLabel="Checkmark Image View">
+                                        <rect key="frame" x="24.999999999999986" y="25" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rRL-F6-BWy" secondAttribute="height" multiplier="1:1" id="49l-2T-0B0"/>
+                                            <constraint firstAttribute="width" constant="100" id="h4M-YT-d8P"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rRL-F6-BWy" firstAttribute="centerX" secondItem="LYZ-YF-DBQ" secondAttribute="centerX" id="5gw-a0-AYq"/>
+                                    <constraint firstAttribute="width" secondItem="LYZ-YF-DBQ" secondAttribute="height" multiplier="1:1" id="9Xn-ne-Wvn"/>
+                                    <constraint firstAttribute="width" constant="150" id="DMw-ej-dsn"/>
+                                    <constraint firstItem="rRL-F6-BWy" firstAttribute="centerY" secondItem="LYZ-YF-DBQ" secondAttribute="centerY" id="MQJ-Ld-4t6"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-gX-3DF" customClass="AddMatchResultView" customModule="W3Stats" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1000" width="375" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,11 +139,14 @@
                             <constraint firstItem="8Cg-Ge-7uL" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Isz-Tk-xDG"/>
                             <constraint firstItem="9nT-7K-81x" firstAttribute="bottom" secondItem="YT7-gu-QyV" secondAttribute="bottom" id="RxE-ZS-TAc"/>
                             <constraint firstItem="dyO-gX-3DF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SQO-U0-S4m"/>
+                            <constraint firstItem="LYZ-YF-DBQ" firstAttribute="width" secondItem="LYZ-YF-DBQ" secondAttribute="height" multiplier="1:1" id="Ss9-ej-Scf"/>
                             <constraint firstItem="YT7-gu-QyV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TZD-at-wXe"/>
+                            <constraint firstItem="LYZ-YF-DBQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TsR-MQ-h0N"/>
                             <constraint firstItem="Nhw-7L-0k7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZGq-TK-exU"/>
                             <constraint firstItem="fgt-4e-RaH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a3L-KX-Y4W"/>
                             <constraint firstItem="fgt-4e-RaH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b9W-er-zkR"/>
                             <constraint firstAttribute="trailing" secondItem="YT7-gu-QyV" secondAttribute="trailing" id="cqZ-qp-13S"/>
+                            <constraint firstItem="LYZ-YF-DBQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dEn-no-ctB"/>
                             <constraint firstAttribute="bottom" secondItem="dyO-gX-3DF" secondAttribute="bottom" id="ePQ-6k-SzO"/>
                             <constraint firstItem="njv-oo-gMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRK-V4-7VE"/>
                             <constraint firstItem="9nT-7K-81x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fgM-aS-dYd"/>
@@ -145,6 +167,7 @@
                         <outlet property="addMatchResultView" destination="dyO-gX-3DF" id="LQY-B8-u8L"/>
                         <outlet property="addMatchResultViewHeightConstraint" destination="oZj-CT-cLQ" id="PAM-3q-iNe"/>
                         <outlet property="backgroundBlurView" destination="fgt-4e-RaH" id="LHn-AC-jHl"/>
+                        <outlet property="checkmarkView" destination="LYZ-YF-DBQ" id="7aP-fw-1ni"/>
                         <outlet property="playerView" destination="9nT-7K-81x" id="UAs-7f-Mgs"/>
                         <outlet property="versusScrollView" destination="njv-oo-gMv" id="4oh-mB-Gax"/>
                         <outlet property="vsElfView" destination="IaS-RB-ydZ" id="Nub-B5-5q2"/>
@@ -251,5 +274,6 @@
         <image name="add" width="30" height="30"/>
         <image name="add_highlighted" width="30" height="30"/>
         <image name="background" width="375" height="812"/>
+        <image name="checkmark" width="980" height="980"/>
     </resources>
 </document>

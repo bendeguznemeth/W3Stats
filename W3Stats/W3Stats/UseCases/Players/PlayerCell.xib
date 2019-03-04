@@ -33,7 +33,7 @@
                         <constraint firstItem="ieg-n3-Uei" firstAttribute="centerY" secondItem="Tbk-yq-1su" secondAttribute="centerY" id="U6v-S7-Smd"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="human" translatesAutoresizingMaskIntoConstraints="NO" id="1Cc-sS-4im" userLabel="Player Image View">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="1Cc-sS-4im" userLabel="Player Image View">
                     <rect key="frame" x="15" y="17.5" width="85" height="85"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="85" id="WaI-n1-jKs"/>
@@ -61,6 +61,6 @@
         </view>
     </objects>
     <resources>
-        <image name="human" width="452" height="512"/>
+        <image name="default_player" width="54.545455932617188" height="54.545455932617188"/>
     </resources>
 </document>

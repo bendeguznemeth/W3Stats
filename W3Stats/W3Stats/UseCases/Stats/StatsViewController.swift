@@ -18,6 +18,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var vsUndeadView: VersusView!
     @IBOutlet weak var addMatchResultView: AddMatchResultView!
     @IBOutlet weak var backgroundBlurView: UIView!
+    @IBOutlet weak var checkmarkView: UIView!
     @IBOutlet weak var addMatchResultViewHeightConstraint: NSLayoutConstraint!
     
     var player: Player?
@@ -29,6 +30,8 @@ class StatsViewController: UIViewController {
         
         self.addMatchResultView.delegate = self
         self.playerView.delegate = self
+        
+        self.checkmarkView.layer.cornerRadius = 30
         
         self.setupVersusViewLongPressClosures()
         
@@ -278,6 +281,23 @@ class StatsViewController: UIViewController {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    private func showCheckmark() {
+        self.checkmarkView.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.view.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 0.5,
+                           animations: {
+                            self.checkmarkView.alpha = 0
+                            self.view.layoutIfNeeded()
+            }, completion: { _ in
+                self.checkmarkView.isHidden = true
+                self.checkmarkView.alpha = 0.9
+            })
+        })
+    }
 }
 
 extension StatsViewController: MatchResultDelegate {
@@ -316,8 +336,8 @@ extension StatsViewController: MatchResultDelegate {
         }
         
         self.showStats()
-        
         self.hideAddMatchResultView()
+        self.showCheckmark()
     }
 }
 

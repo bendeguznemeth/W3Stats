@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="axK-95-7ej" userLabel="Race Image View">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_player" translatesAutoresizingMaskIntoConstraints="NO" id="axK-95-7ej" userLabel="Race Image View">
                     <rect key="frame" x="20" y="7.5" width="85" height="85"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="axK-95-7ej" secondAttribute="height" multiplier="1:1" id="3il-Kv-fhN"/>
